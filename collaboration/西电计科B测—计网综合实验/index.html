@@ -1,0 +1,1717 @@
+<!doctype html>
+<html>
+<head>
+<meta charset='UTF-8'><meta name='viewport' content='width=device-width initial-scale=1'>
+
+<style type='text/css'>html {overflow-x: initial !important;}:root { --bg-color:#ffffff; --text-color:#333333; --select-text-bg-color:#B5D6FC; --select-text-font-color:auto; --monospace:"Lucida Console",Consolas,"Courier",monospace; --title-bar-height:20px; }
+.mac-os-11 { --title-bar-height:28px; }
+html { font-size: 14px; background-color: var(--bg-color); color: var(--text-color); font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; -webkit-font-smoothing: antialiased; }
+body { margin: 0px; padding: 0px; height: auto; inset: 0px; font-size: 1rem; line-height: 1.42857; overflow-x: hidden; background: inherit; tab-size: 4; }
+iframe { margin: auto; }
+a.url { word-break: break-all; }
+a:active, a:hover { outline: 0px; }
+.in-text-selection, ::selection { text-shadow: none; background: var(--select-text-bg-color); color: var(--select-text-font-color); }
+#write { margin: 0px auto; height: auto; width: inherit; word-break: normal; overflow-wrap: break-word; position: relative; white-space: normal; overflow-x: visible; padding-top: 36px; }
+#write.first-line-indent p { text-indent: 2em; }
+#write.first-line-indent li p, #write.first-line-indent p * { text-indent: 0px; }
+#write.first-line-indent li { margin-left: 2em; }
+.for-image #write { padding-left: 8px; padding-right: 8px; }
+body.typora-export { padding-left: 30px; padding-right: 30px; }
+.typora-export .footnote-line, .typora-export li, .typora-export p { white-space: pre-wrap; }
+.typora-export .task-list-item input { pointer-events: none; }
+@media screen and (max-width: 500px) {
+  body.typora-export { padding-left: 0px; padding-right: 0px; }
+  #write { padding-left: 20px; padding-right: 20px; }
+  .CodeMirror-sizer { margin-left: 0px !important; }
+  .CodeMirror-gutters { display: none !important; }
+}
+#write li > figure:last-child { margin-bottom: 0.5rem; }
+#write ol, #write ul { position: relative; }
+img { max-width: 100%; vertical-align: middle; image-orientation: from-image; }
+button, input, select, textarea { color: inherit; font: inherit; }
+input[type="checkbox"], input[type="radio"] { line-height: normal; padding: 0px; }
+*, ::after, ::before { box-sizing: border-box; }
+#write h1, #write h2, #write h3, #write h4, #write h5, #write h6, #write p, #write pre { width: inherit; }
+#write h1, #write h2, #write h3, #write h4, #write h5, #write h6, #write p { position: relative; }
+p { line-height: inherit; }
+h1, h2, h3, h4, h5, h6 { break-after: avoid-page; break-inside: avoid; orphans: 4; }
+p { orphans: 4; }
+h1 { font-size: 2rem; }
+h2 { font-size: 1.8rem; }
+h3 { font-size: 1.6rem; }
+h4 { font-size: 1.4rem; }
+h5 { font-size: 1.2rem; }
+h6 { font-size: 1rem; }
+.md-math-block, .md-rawblock, h1, h2, h3, h4, h5, h6, p { margin-top: 1rem; margin-bottom: 1rem; }
+.hidden { display: none; }
+.md-blockmeta { color: rgb(204, 204, 204); font-weight: 700; font-style: italic; }
+a { cursor: pointer; }
+sup.md-footnote { padding: 2px 4px; background-color: rgba(238, 238, 238, 0.7); color: rgb(85, 85, 85); border-radius: 4px; cursor: pointer; }
+sup.md-footnote a, sup.md-footnote a:hover { color: inherit; text-transform: inherit; text-decoration: inherit; }
+#write input[type="checkbox"] { cursor: pointer; width: inherit; height: inherit; }
+figure { overflow-x: auto; margin: 1.2em 0px; max-width: calc(100% + 16px); padding: 0px; }
+figure > table { margin: 0px; }
+tr { break-inside: avoid; break-after: auto; }
+thead { display: table-header-group; }
+table { border-collapse: collapse; border-spacing: 0px; width: 100%; overflow: auto; break-inside: auto; text-align: left; }
+table.md-table td { min-width: 32px; }
+.CodeMirror-gutters { border-right: 0px; background-color: inherit; }
+.CodeMirror-linenumber { user-select: none; }
+.CodeMirror { text-align: left; }
+.CodeMirror-placeholder { opacity: 0.3; }
+.CodeMirror pre { padding: 0px 4px; }
+.CodeMirror-lines { padding: 0px; }
+div.hr:focus { cursor: none; }
+#write pre { white-space: pre-wrap; }
+#write.fences-no-line-wrapping pre { white-space: pre; }
+#write pre.ty-contain-cm { white-space: normal; }
+.CodeMirror-gutters { margin-right: 4px; }
+.md-fences { font-size: 0.9rem; display: block; break-inside: avoid; text-align: left; overflow: visible; white-space: pre; background: inherit; position: relative !important; }
+.md-fences-adv-panel { width: 100%; margin-top: 10px; text-align: center; padding-top: 0px; padding-bottom: 8px; overflow-x: auto; }
+#write .md-fences.mock-cm { white-space: pre-wrap; }
+.md-fences.md-fences-with-lineno { padding-left: 0px; }
+#write.fences-no-line-wrapping .md-fences.mock-cm { white-space: pre; overflow-x: auto; }
+.md-fences.mock-cm.md-fences-with-lineno { padding-left: 8px; }
+.CodeMirror-line, twitterwidget { break-inside: avoid; }
+.footnotes { opacity: 0.8; font-size: 0.9rem; margin-top: 1em; margin-bottom: 1em; }
+.footnotes + .footnotes { margin-top: 0px; }
+.md-reset { margin: 0px; padding: 0px; border: 0px; outline: 0px; vertical-align: top; background: 0px 0px; text-decoration: none; text-shadow: none; float: none; position: static; width: auto; height: auto; white-space: nowrap; cursor: inherit; -webkit-tap-highlight-color: transparent; line-height: normal; font-weight: 400; text-align: left; box-sizing: content-box; direction: ltr; }
+li div { padding-top: 0px; }
+blockquote { margin: 1rem 0px; }
+li .mathjax-block, li p { margin: 0.5rem 0px; }
+li blockquote { margin: 1rem 0px; }
+li { margin: 0px; position: relative; }
+blockquote > :last-child { margin-bottom: 0px; }
+blockquote > :first-child, li > :first-child { margin-top: 0px; }
+.footnotes-area { color: rgb(136, 136, 136); margin-top: 0.714rem; padding-bottom: 0.143rem; white-space: normal; }
+#write .footnote-line { white-space: pre-wrap; }
+@media print {
+  body, html { border: 1px solid transparent; height: 99%; break-after: avoid; break-before: avoid; font-variant-ligatures: no-common-ligatures; }
+  #write { margin-top: 0px; padding-top: 0px; border-color: transparent !important; }
+  .typora-export * { -webkit-print-color-adjust: exact; }
+  .typora-export #write { break-after: avoid; }
+  .typora-export #write::after { height: 0px; }
+  .is-mac table { break-inside: avoid; }
+  .typora-export-show-outline .typora-export-sidebar { display: none; }
+}
+.footnote-line { margin-top: 0.714em; font-size: 0.7em; }
+a img, img a { cursor: pointer; }
+pre.md-meta-block { font-size: 0.8rem; min-height: 0.8rem; white-space: pre-wrap; background: rgb(204, 204, 204); display: block; overflow-x: hidden; }
+p > .md-image:only-child:not(.md-img-error) img, p > img:only-child { display: block; margin: auto; }
+#write.first-line-indent p > .md-image:only-child:not(.md-img-error) img { left: -2em; position: relative; }
+p > .md-image:only-child { display: inline-block; width: 100%; }
+#write .MathJax_Display { margin: 0.8em 0px 0px; }
+.md-math-block { width: 100%; }
+.md-math-block:not(:empty)::after { display: none; }
+.MathJax_ref { fill: currentcolor; }
+[contenteditable="true"]:active, [contenteditable="true"]:focus, [contenteditable="false"]:active, [contenteditable="false"]:focus { outline: 0px; box-shadow: none; }
+.md-task-list-item { position: relative; list-style-type: none; }
+.task-list-item.md-task-list-item { padding-left: 0px; }
+.md-task-list-item > input { position: absolute; top: 0px; left: 0px; margin-left: -1.2em; margin-top: calc(1em - 10px); border: none; }
+.math { font-size: 1rem; }
+.md-toc { min-height: 3.58rem; position: relative; font-size: 0.9rem; border-radius: 10px; }
+.md-toc-content { position: relative; margin-left: 0px; }
+.md-toc-content::after, .md-toc::after { display: none; }
+.md-toc-item { display: block; color: rgb(65, 131, 196); }
+.md-toc-item a { text-decoration: none; }
+.md-toc-inner:hover { text-decoration: underline; }
+.md-toc-inner { display: inline-block; cursor: pointer; }
+.md-toc-h1 .md-toc-inner { margin-left: 0px; font-weight: 700; }
+.md-toc-h2 .md-toc-inner { margin-left: 2em; }
+.md-toc-h3 .md-toc-inner { margin-left: 4em; }
+.md-toc-h4 .md-toc-inner { margin-left: 6em; }
+.md-toc-h5 .md-toc-inner { margin-left: 8em; }
+.md-toc-h6 .md-toc-inner { margin-left: 10em; }
+@media screen and (max-width: 48em) {
+  .md-toc-h3 .md-toc-inner { margin-left: 3.5em; }
+  .md-toc-h4 .md-toc-inner { margin-left: 5em; }
+  .md-toc-h5 .md-toc-inner { margin-left: 6.5em; }
+  .md-toc-h6 .md-toc-inner { margin-left: 8em; }
+}
+a.md-toc-inner { font-size: inherit; font-style: inherit; font-weight: inherit; line-height: inherit; }
+.footnote-line a:not(.reversefootnote) { color: inherit; }
+.md-attr { display: none; }
+.md-fn-count::after { content: "."; }
+code, pre, samp, tt { font-family: var(--monospace); }
+kbd { margin: 0px 0.1em; padding: 0.1em 0.6em; font-size: 0.8em; color: rgb(36, 39, 41); background: rgb(255, 255, 255); border: 1px solid rgb(173, 179, 185); border-radius: 3px; box-shadow: rgba(12, 13, 14, 0.2) 0px 1px 0px, rgb(255, 255, 255) 0px 0px 0px 2px inset; white-space: nowrap; vertical-align: middle; }
+.md-comment { color: rgb(162, 127, 3); opacity: 0.6; font-family: var(--monospace); }
+code { text-align: left; vertical-align: initial; }
+a.md-print-anchor { white-space: pre !important; border-width: initial !important; border-style: none !important; border-color: initial !important; display: inline-block !important; position: absolute !important; width: 1px !important; right: 0px !important; outline: 0px !important; background: 0px 0px !important; text-decoration: initial !important; text-shadow: initial !important; }
+.os-windows.monocolor-emoji .md-emoji { font-family: "Segoe UI Symbol", sans-serif; }
+.md-diagram-panel > svg { max-width: 100%; }
+[lang="flow"] svg, [lang="mermaid"] svg { max-width: 100%; height: auto; }
+[lang="mermaid"] .node text { font-size: 1rem; }
+table tr th { border-bottom: 0px; }
+video { max-width: 100%; display: block; margin: 0px auto; }
+iframe { max-width: 100%; width: 100%; border: none; }
+.highlight td, .highlight tr { border: 0px; }
+mark { background: rgb(255, 255, 0); color: rgb(0, 0, 0); }
+.md-html-inline .md-plain, .md-html-inline strong, mark .md-inline-math, mark strong { color: inherit; }
+.md-expand mark .md-meta { opacity: 0.3 !important; }
+mark .md-meta { color: rgb(0, 0, 0); }
+@media print {
+  .typora-export h1, .typora-export h2, .typora-export h3, .typora-export h4, .typora-export h5, .typora-export h6 { break-inside: avoid; }
+}
+.md-diagram-panel .messageText { stroke: none !important; }
+.md-diagram-panel .start-state { fill: var(--node-fill); }
+.md-diagram-panel .edgeLabel rect { opacity: 1 !important; }
+.md-fences.md-fences-math { font-size: 1em; }
+.md-fences-advanced:not(.md-focus) { padding: 0px; white-space: nowrap; border: 0px; }
+.md-fences-advanced:not(.md-focus) { background: inherit; }
+.typora-export-show-outline .typora-export-content { max-width: 1440px; margin: auto; display: flex; flex-direction: row; }
+.typora-export-sidebar { width: 300px; font-size: 0.8rem; margin-top: 80px; margin-right: 18px; }
+.typora-export-show-outline #write { --webkit-flex:2; flex: 2 1 0%; }
+.typora-export-sidebar .outline-content { position: fixed; top: 0px; max-height: 100%; overflow: hidden auto; padding-bottom: 30px; padding-top: 60px; width: 300px; }
+@media screen and (max-width: 1024px) {
+  .typora-export-sidebar, .typora-export-sidebar .outline-content { width: 240px; }
+}
+@media screen and (max-width: 800px) {
+  .typora-export-sidebar { display: none; }
+}
+.outline-content li, .outline-content ul { margin-left: 0px; margin-right: 0px; padding-left: 0px; padding-right: 0px; list-style: none; }
+.outline-content ul { margin-top: 0px; margin-bottom: 0px; }
+.outline-content strong { font-weight: 400; }
+.outline-expander { width: 1rem; height: 1.42857rem; position: relative; display: table-cell; vertical-align: middle; cursor: pointer; padding-left: 4px; }
+.outline-expander::before { content: ""; position: relative; font-family: Ionicons; display: inline-block; font-size: 8px; vertical-align: middle; }
+.outline-item { padding-top: 3px; padding-bottom: 3px; cursor: pointer; }
+.outline-expander:hover::before { content: ""; }
+.outline-h1 > .outline-item { padding-left: 0px; }
+.outline-h2 > .outline-item { padding-left: 1em; }
+.outline-h3 > .outline-item { padding-left: 2em; }
+.outline-h4 > .outline-item { padding-left: 3em; }
+.outline-h5 > .outline-item { padding-left: 4em; }
+.outline-h6 > .outline-item { padding-left: 5em; }
+.outline-label { cursor: pointer; display: table-cell; vertical-align: middle; text-decoration: none; color: inherit; }
+.outline-label:hover { text-decoration: underline; }
+.outline-item:hover { border-color: rgb(245, 245, 245); background-color: var(--item-hover-bg-color); }
+.outline-item:hover { margin-left: -28px; margin-right: -28px; border-left: 28px solid transparent; border-right: 28px solid transparent; }
+.outline-item-single .outline-expander::before, .outline-item-single .outline-expander:hover::before { display: none; }
+.outline-item-open > .outline-item > .outline-expander::before { content: ""; }
+.outline-children { display: none; }
+.info-panel-tab-wrapper { display: none; }
+.outline-item-open > .outline-children { display: block; }
+.typora-export .outline-item { padding-top: 1px; padding-bottom: 1px; }
+.typora-export .outline-item:hover { margin-right: -8px; border-right: 8px solid transparent; }
+.typora-export .outline-expander::before { content: "+"; font-family: inherit; top: -1px; }
+.typora-export .outline-expander:hover::before, .typora-export .outline-item-open > .outline-item > .outline-expander::before { content: "−"; }
+.typora-export-collapse-outline .outline-children { display: none; }
+.typora-export-collapse-outline .outline-item-open > .outline-children, .typora-export-no-collapse-outline .outline-children { display: block; }
+.typora-export-no-collapse-outline .outline-expander::before { content: "" !important; }
+.typora-export-show-outline .outline-item-active > .outline-item .outline-label { font-weight: 700; }
+.md-inline-math-container mjx-container { zoom: 0.95; }
+
+
+.CodeMirror { height: auto; }
+.CodeMirror.cm-s-inner { background: inherit; }
+.CodeMirror-scroll { overflow: auto hidden; z-index: 3; }
+.CodeMirror-gutter-filler, .CodeMirror-scrollbar-filler { background-color: rgb(255, 255, 255); }
+.CodeMirror-gutters { border-right: 1px solid rgb(221, 221, 221); background: inherit; white-space: nowrap; }
+.CodeMirror-linenumber { padding: 0px 3px 0px 5px; text-align: right; color: rgb(153, 153, 153); }
+.cm-s-inner .cm-keyword { color: rgb(119, 0, 136); }
+.cm-s-inner .cm-atom, .cm-s-inner.cm-atom { color: rgb(34, 17, 153); }
+.cm-s-inner .cm-number { color: rgb(17, 102, 68); }
+.cm-s-inner .cm-def { color: rgb(0, 0, 255); }
+.cm-s-inner .cm-variable { color: rgb(0, 0, 0); }
+.cm-s-inner .cm-variable-2 { color: rgb(0, 85, 170); }
+.cm-s-inner .cm-variable-3 { color: rgb(0, 136, 85); }
+.cm-s-inner .cm-string { color: rgb(170, 17, 17); }
+.cm-s-inner .cm-property { color: rgb(0, 0, 0); }
+.cm-s-inner .cm-operator { color: rgb(152, 26, 26); }
+.cm-s-inner .cm-comment, .cm-s-inner.cm-comment { color: rgb(170, 85, 0); }
+.cm-s-inner .cm-string-2 { color: rgb(255, 85, 0); }
+.cm-s-inner .cm-meta { color: rgb(85, 85, 85); }
+.cm-s-inner .cm-qualifier { color: rgb(85, 85, 85); }
+.cm-s-inner .cm-builtin { color: rgb(51, 0, 170); }
+.cm-s-inner .cm-bracket { color: rgb(153, 153, 119); }
+.cm-s-inner .cm-tag { color: rgb(17, 119, 0); }
+.cm-s-inner .cm-attribute { color: rgb(0, 0, 204); }
+.cm-s-inner .cm-header, .cm-s-inner.cm-header { color: rgb(0, 0, 255); }
+.cm-s-inner .cm-quote, .cm-s-inner.cm-quote { color: rgb(0, 153, 0); }
+.cm-s-inner .cm-hr, .cm-s-inner.cm-hr { color: rgb(153, 153, 153); }
+.cm-s-inner .cm-link, .cm-s-inner.cm-link { color: rgb(0, 0, 204); }
+.cm-negative { color: rgb(221, 68, 68); }
+.cm-positive { color: rgb(34, 153, 34); }
+.cm-header, .cm-strong { font-weight: 700; }
+.cm-del { text-decoration: line-through; }
+.cm-em { font-style: italic; }
+.cm-link { text-decoration: underline; }
+.cm-error { color: red; }
+.cm-invalidchar { color: red; }
+.cm-constant { color: rgb(38, 139, 210); }
+.cm-defined { color: rgb(181, 137, 0); }
+div.CodeMirror span.CodeMirror-matchingbracket { color: rgb(0, 255, 0); }
+div.CodeMirror span.CodeMirror-nonmatchingbracket { color: rgb(255, 34, 34); }
+.cm-s-inner .CodeMirror-activeline-background { background: inherit; }
+.CodeMirror { position: relative; overflow: hidden; }
+.CodeMirror-scroll { height: 100%; outline: 0px; position: relative; box-sizing: content-box; background: inherit; }
+.CodeMirror-sizer { position: relative; }
+.CodeMirror-gutter-filler, .CodeMirror-hscrollbar, .CodeMirror-scrollbar-filler, .CodeMirror-vscrollbar { position: absolute; z-index: 6; display: none; outline: 0px; }
+.CodeMirror-vscrollbar { right: 0px; top: 0px; overflow: hidden; }
+.CodeMirror-hscrollbar { bottom: 0px; left: 0px; overflow: auto hidden; }
+.CodeMirror-scrollbar-filler { right: 0px; bottom: 0px; }
+.CodeMirror-gutter-filler { left: 0px; bottom: 0px; }
+.CodeMirror-gutters { position: absolute; left: 0px; top: 0px; padding-bottom: 10px; z-index: 3; overflow-y: hidden; }
+.CodeMirror-gutter { white-space: normal; height: 100%; box-sizing: content-box; padding-bottom: 30px; margin-bottom: -32px; display: inline-block; }
+.CodeMirror-gutter-wrapper { position: absolute; z-index: 4; background: 0px 0px !important; border: none !important; }
+.CodeMirror-gutter-background { position: absolute; top: 0px; bottom: 0px; z-index: 4; }
+.CodeMirror-gutter-elt { position: absolute; cursor: default; z-index: 4; }
+.CodeMirror-lines { cursor: text; }
+.CodeMirror pre { border-radius: 0px; border-width: 0px; background: 0px 0px; font-family: inherit; font-size: inherit; margin: 0px; white-space: pre; overflow-wrap: normal; color: inherit; z-index: 2; position: relative; overflow: visible; }
+.CodeMirror-wrap pre { overflow-wrap: break-word; white-space: pre-wrap; word-break: normal; }
+.CodeMirror-code pre { border-right: 30px solid transparent; width: fit-content; }
+.CodeMirror-wrap .CodeMirror-code pre { border-right: none; width: auto; }
+.CodeMirror-linebackground { position: absolute; inset: 0px; z-index: 0; }
+.CodeMirror-linewidget { position: relative; z-index: 2; overflow: auto; }
+.CodeMirror-wrap .CodeMirror-scroll { overflow-x: hidden; }
+.CodeMirror-measure { position: absolute; width: 100%; height: 0px; overflow: hidden; visibility: hidden; }
+.CodeMirror-measure pre { position: static; }
+.CodeMirror div.CodeMirror-cursor { position: absolute; visibility: hidden; border-right: none; width: 0px; }
+.CodeMirror div.CodeMirror-cursor { visibility: hidden; }
+.CodeMirror-focused div.CodeMirror-cursor { visibility: inherit; }
+.cm-searching { background: rgba(255, 255, 0, 0.4); }
+span.cm-underlined { text-decoration: underline; }
+span.cm-strikethrough { text-decoration: line-through; }
+.cm-tw-syntaxerror { color: rgb(255, 255, 255); background-color: rgb(153, 0, 0); }
+.cm-tw-deleted { text-decoration: line-through; }
+.cm-tw-header5 { font-weight: 700; }
+.cm-tw-listitem:first-child { padding-left: 10px; }
+.cm-tw-box { border-style: solid; border-right-width: 1px; border-bottom-width: 1px; border-left-width: 1px; border-color: inherit; border-top-width: 0px !important; }
+.cm-tw-underline { text-decoration: underline; }
+@media print {
+  .CodeMirror div.CodeMirror-cursor { visibility: hidden; }
+}
+
+
+@import "";
+
+/* FONTS */
+
+/* Display Font - IBM Plex Sans */
+/* License - SIL Open Font License 1.1 - https://github.com/IBM/plex/blob/master/LICENSE.txt */
+/* Monospace Font - IBM Plex Mono */
+/* License - SIL Open Font License 1.1 - https://github.com/IBM/plex/blob/master/LICENSE.txt */
+
+/* Monospace Font - Fira Code */
+
+/* Monospace Font - Fira Mono */
+
+/* Display Font - Calibre */
+/* VARIABLES */
+
+:root {
+  --theme-0: #fff;
+
+  --theme-muted: #F6F7F8;
+  --theme-border: #EBEDF0;
+  --theme-muted-blue: #d4e7fd;
+
+  --theme-link: #076DDD;
+  --theme-font-general: #171E27;
+
+  /* Slate grayscale */
+  --theme-50: #f8fafc;
+  --theme-100: #f1f5f9;
+  --theme-200: #e2e8f0;
+  --theme-300: #cbd5e1;
+  --theme-400: #94a3b8;
+  --theme-500: #64748b;
+  --theme-600: #475569;
+  --theme-700: #334155;
+  --theme-800: #1e293b;
+  --theme-900: #0f172a;
+
+  /* Tailwind variables */
+  --tw-primary: #62bbf3;
+
+  --tw-prose-body: var(--theme-font-general);
+  --tw-prose-headings: var(--theme-900);
+  --tw-prose-lead: var(--theme-600);
+  --tw-prose-links: var(--theme-link);
+  --tw-prose-bold: var(--theme-900);
+  --tw-prose-counters: var(--theme-500);
+  --tw-prose-bullets: var(--theme-500);
+  --tw-prose-hr: var(--theme-200);
+  --tw-prose-quotes: var(--theme-900);
+  --tw-prose-quote-borders: var(--theme-200);
+  --tw-prose-captions: var(--theme-500);
+  --tw-prose-code: var(--theme-900);
+  --tw-prose-pre-code: var(--theme-100);
+  --tw-prose-pre-bg: var(--theme-800);
+  --tw-prose-th-borders: var(--theme-300);
+  --tw-prose-td-borders: var(--theme-200);
+  --tw-prose-bg: var(--theme-0);
+  --tw-prose-meta: var(--theme-500);
+  --tw-prose-meta-bg: var(--theme-100);
+
+  --tw-prose-invert-body: var(--theme-300);
+  --tw-prose-invert-headings: var(--theme-0);
+  --tw-prose-invert-lead: var(--theme-400);
+  --tw-prose-invert-links: var(--theme-0);
+  --tw-prose-invert-bold: var(--theme-0);
+  --tw-prose-invert-counters: var(--theme-400);
+  --tw-prose-invert-bullets: var(--theme-600);
+  --tw-prose-invert-hr: var(--theme-700);
+  --tw-prose-invert-quotes: var(--theme-100);
+  --tw-prose-invert-quote-borders: var(--theme-700);
+  --tw-prose-invert-captions: var(--theme-400);
+  --tw-prose-invert-code: var(--theme-0);
+  --tw-prose-invert-pre-bg: var(--theme-900);
+  --tw-prose-invert-th-borders: var(--theme-600);
+  --tw-prose-invert-td-borders: var(--theme-700);
+  --tw-prose-invert-bg: var(--theme-800);
+  --tw-prose-invert-meta: var(--theme-400);
+  --tw-prose-invert-meta-bg: var(--theme-700);
+
+  --tw-highlight-color: #fde047;
+  /* yellow-300 */
+  --tw-drop-shadow-md: drop-shadow(0 4px 3px rgb(0 0 0 / 0.07)) drop-shadow(0 2px 2px rgb(0 0 0 / 0.06));
+  --tw-button-hover-bg: var(--theme-100);
+
+  --tw-button-hover-bg-inverted: var(--theme-700);
+
+  /* Typora variables */
+
+  --background: var(--tw-prose-bg);
+  --bg-color: var(--tw-prose-bg);
+  --text-color: var(--tw-prose-body);
+  --primary-color: var(--tw-primary);
+  --md-char-color: var(--theme-400);
+  --meta-content-color: var(--theme-500);
+  --typora-source-body: var(--theme-800);
+  --heading-char-color: var(--md-char-color);
+  --mermaid-theme: neutral;
+  --active-toggle-btn-color: var(--theme-200);
+
+  --md-char-color-inverted: var(--theme-500);
+  --meta-content-color-inverted: var(--theme-400);
+  --typora-source-body-inverted: var(--theme-300);
+  --mermaid-theme-inverted: dark;
+  --active-toggle-btn-color-inverted: var(--theme-400);
+
+  /* Sidebar */
+  /* --side-bar-bg-color: var(--tw-prose-bg); */
+  --side-bar-bg-color: var(--theme-muted);
+  --active-file-bg-color: var(--theme-100);
+  --active-file-text-color: var(--tw-prose-bold);
+  --active-file-border-color: var(--theme-100);
+  --panel-border-color: var(--theme-300);
+  --blur-text-color: var(--theme-300);
+  --window-border: 1px solid var(--theme-border);
+  --item-hover-bg-color: var(--theme-100);
+  --search-hit-text-bg-color: var(--theme-200);
+  --search-hit-text-font-color: inherit;
+  --search-select-text-color: var(--select-text-font-color);
+  --search-select-bg-color: var(--select-text-bg-color);
+
+  --blur-text-color-inverted: var(--theme-500);
+  --panel-border-color-inverted: var(--theme-700);
+  --active-file-bg-color-inverted: var(--theme-700);
+  --window-border-inverted: 1px solid var(--theme-700);
+  --search-hit-text-bg-color-inverted: var(--theme-700);
+  --search-hit-text-font-color-inverted: var(--theme-0);
+  --search-select-bg-color-inverted: var(--theme-400);
+  --rawblock-edit-panel-bd: var(--tw-prose-pre-bg);
+  --item-hover-bg-color-inverted: var(--theme-700);
+
+  --monospace: "IBMPlexMono", "FiraCode", ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas,
+    "Liberation Mono", "Courier New", monospace;
+
+  /* Custom */
+  --footnote: var(--tw-prose-body);
+  /* I'd love to use the --theme grayscale for --footnote-bg, but there's (currently)
+  no way to add an alpha-channel to a CSS variable (and we need the transparency
+  because otherwise the caret wil not be visible), so I here just used a hardcoded
+  copy of --theme-500 */
+  --footnote-bg: #94a3b855;
+  --button-bg: var(--theme-200);
+
+  --button-bg-inverted: var(--theme-600);
+
+  --md-grid-header: var(--theme-100);
+  --md-grid-header-ext: var(--theme-400);
+  --md-grid-ext: var(--theme-300);
+  --md-grid-header-active: var(--theme-500);
+  --md-grid-active: var(--theme-400);
+  --md-grid-border-color: var(--theme-500);
+
+  --md-grid-header-inverted: var(--theme-600);
+  --md-grid-header-ext-inverted: var(--theme-500);
+  --md-grid-ext-inverted: var(--theme-600);
+  --md-grid-header-active-inverted: var(--theme-400);
+  --md-grid-active-inverted: var(--theme-500);
+  --md-grid-border-color-inverted: var(--theme-200);
+
+  --code-blocks-font-size: 0.86em;
+  --inline-code-font-size: 0.86em;
+
+  --inline-code-font-color: #876CE0;
+}
+
+.ty-file-search-match-text {
+  background-color: var(--search-hit-text-bg-color);
+}
+
+/* TAILWIND RESET */
+
+/*
+1. Prevent padding and border from affecting element width. (https://github.com/mozdevs/cssremedy/issues/4)
+2. Allow adding a border to an element by just adding a border-width. (https://github.com/tailwindcss/tailwindcss/pull/116)
+*/
+
+*,
+::before,
+::after {
+  box-sizing: border-box;
+  /* 1 */
+  border-width: 0;
+  /* 2 */
+  border-style: solid;
+  /* 2 */
+  border-color: currentColor;
+  /* 2 */
+}
+
+::before,
+::after {
+  --tw-content: "";
+}
+
+/*
+1. Use a consistent sensible line-height in all browsers.
+2. Prevent adjustments of font size after orientation changes in iOS.
+3. Use a more readable tab size.
+*/
+
+#text {
+  line-height: 1.5;
+  /* 1 */
+  -webkit-text-size-adjust: 100%;
+  /* 2 */
+  -moz-tab-size: 4;
+  /* 3 */
+  -o-tab-size: 4;
+  tab-size: 4;
+  /* 3 */
+}
+
+/*
+1. Remove the margin in all browsers.
+2. Inherit line-height from `html` so users can set them as a class directly on the `html` element.
+*/
+
+#text {
+  margin: 0;
+  /* 1 */
+  line-height: inherit;
+  /* 2 */
+}
+
+/*
+1. Add the correct height in Firefox.
+2. Correct the inheritance of border color in Firefox. (https://bugzilla.mozilla.org/show_bug.cgi?id=190655)
+3. Ensure horizontal rules are visible by default.
+*/
+
+hr {
+  height: 0;
+  /* 1 */
+  color: inherit;
+  /* 2 */
+  border-top-width: 1px;
+  /* 3 */
+}
+
+/*
+Add the correct text decoration in Chrome, Edge, and Safari.
+*/
+
+abbr:where([title]) {
+  -webkit-text-decoration: underline dotted;
+  text-decoration: underline dotted;
+}
+
+/*
+Remove the default font size and weight for headings.
+*/
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-size: inherit;
+  font-weight: inherit;
+}
+
+/*
+Reset links to optimize for opt-in styling instead of opt-out.
+*/
+
+a {
+  color: inherit;
+  text-decoration: inherit;
+}
+
+/*
+Add the correct font weight in Edge and Safari.
+*/
+
+b,
+strong {
+  font-weight: bolder;
+}
+
+/*
+1. Use the user's configured `mono` font family by default.
+2. Correct the odd `em` font sizing in all browsers.
+*/
+
+code,
+kbd,
+samp,
+pre {
+  font-family: var(--monospace);
+  /* 1 */
+  font-size: 1em;
+  /* 2 */
+}
+
+/*
+Add the correct font size in all browsers.
+*/
+
+small {
+  font-size: 80%;
+}
+
+/*
+Prevent `sub` and `sup` elements from affecting the line height in all browsers.
+*/
+
+sub,
+sup {
+  font-size: 75%;
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline;
+}
+
+sub {
+  bottom: -0.25em;
+}
+
+sup {
+  top: -0.5em;
+}
+
+/*
+1. Remove text indentation from table contents in Chrome and Safari. (https://bugs.chromium.org/p/chromium/issues/detail?id=999088, https://bugs.webkit.org/show_bug.cgi?id=201297)
+2. Correct table border color inheritance in all Chrome and Safari. (https://bugs.chromium.org/p/chromium/issues/detail?id=935729, https://bugs.webkit.org/show_bug.cgi?id=195016)
+3. Remove gaps between table borders by default.
+*/
+
+table {
+  text-indent: 0;
+  /* 1 */
+  border-color: inherit;
+  /* 2 */
+  border-collapse: collapse;
+  /* 3 */
+}
+
+/*
+1. Change the font styles in all browsers.
+2. Remove the margin in Firefox and Safari.
+3. Remove default padding in all browsers.
+*/
+
+button,
+input,
+optgroup,
+select,
+textarea {
+  font-family: inherit;
+  /* 1 */
+  font-size: 100%;
+  /* 1 */
+  line-height: inherit;
+  /* 1 */
+  color: inherit;
+  /* 1 */
+  margin: 0;
+  /* 2 */
+  padding: 0;
+  /* 3 */
+}
+
+/*
+Removes the default spacing and border for appropriate elements.
+*/
+
+blockquote,
+dl,
+dd,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+hr,
+figure,
+p,
+pre {
+  margin: 0;
+}
+
+fieldset {
+  margin: 0;
+  padding: 0;
+}
+
+legend {
+  padding: 0;
+}
+
+ol,
+ul,
+menu {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+/*
+Prevent resizing textareas horizontally by default.
+*/
+
+textarea {
+  resize: vertical;
+}
+
+/* TAILWIND PROSE IMPLEMENTATION */
+
+#write {
+  /* font-size: 1.25rem;
+  line-height: 1.8; */
+
+  font-size: 1.12rem;
+  /* 16px */
+  ;
+  line-height: 1.5;
+}
+
+html,
+body {
+  /* font-family: "Inter"; */
+  font-family: "IBMPlexSans";
+  /*font-family: "Calibre";*/
+}
+
+/* on Windows/Linux, it is the part that is not titlebar or status bar. */
+content,
+titlebar {
+  background: var(--tw-prose-bg);
+}
+
+#write {
+  padding-top: 60px;
+  padding-bottom: 60px;
+  color: var(--tw-prose-body);
+  /*Custom width*/
+  max-width: 84ch;
+  /*Default width*/
+  /*max-width: 60ch;*/
+}
+
+
+#write> :where(:first-child) {
+  margin-top: 0;
+}
+
+#write> :where(:last-child) {
+  margin-bottom: 0;
+}
+
+/**
+  * ---------------------
+  * Block Elements
+  */
+
+/* yaml */
+pre.md-meta-block {
+  color: var(--tw-prose-meta);
+  background-color: var(--tw-prose-meta-bg);
+  font-weight: 400;
+  font-size: var(--code-blocks-font-size);
+  line-height: 1.7777778;
+  border-radius: 0.5rem
+    /* 8px */
+  ;
+  padding: 1.1111111em 1.3333333em;
+  margin-bottom: 2.8em;
+}
+
+/* Heading indicator */
+:root {
+  --h1-ind-color: #E4374B;
+  --h2-ind-color: #0EB54F;
+  --h3-ind-color: #076DDD;
+  --h4-ind-color: #876CE0;
+  --h5-ind-color: #D2A852;
+  --h6-ind-color: #E0E5D5;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  position: relative;
+  padding-left: 10px;
+}
+
+h1::before,
+h2::before,
+h3::before,
+h4::before,
+h5::before,
+h6::before {
+  content: '';
+  /* Required content property for pseudo-elements */
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  height: 100%;
+  width: 2px;
+  /* Width of the bar */
+}
+
+/* headings */
+h1 {
+  color: var(--tw-prose-headings);
+  font-weight: 800;
+  font-size: 2em;
+  margin-top: 0;
+  margin-bottom: 0;
+  line-height: 1;
+}
+
+h1 strong {
+  font-weight: 900;
+}
+
+h1::before {
+  background-color: var(--h1-ind-color);
+  /* Color of the bar */
+}
+
+h2 {
+  color: var(--tw-prose-headings);
+  font-weight: 700;
+  font-size: 1.7em;
+  line-height: 1.1111111;
+}
+
+h2 strong {
+  font-weight: 800;
+}
+
+h2::before {
+  background-color: var(--h2-ind-color);
+  /* Color of the bar */
+}
+
+h3 {
+  color: var(--tw-prose-headings);
+  font-weight: 600;
+  font-size: 1.5em;
+  line-height: 1.3333333;
+}
+
+h3 strong {
+  font-weight: 700;
+}
+
+h3::before {
+  background-color: var(--h3-ind-color);
+  /* Color of the bar */
+}
+
+h4 {
+  color: var(--tw-prose-headings);
+  font-weight: 600;
+  line-height: 1.6;
+}
+
+h4 strong {
+  font-weight: 700;
+}
+
+h4::before {
+  background-color: var(--h4-ind-color);
+  /* Color of the bar */
+}
+
+h5 {
+  color: var(--tw-prose-headings);
+  font-weight: 500;
+  line-height: 1.6;
+  font-size: 0.9em;
+}
+
+h5 strong {
+  font-weight: 500;
+}
+
+h5::before {
+  background-color: var(--h5-ind-color);
+  /* Color of the bar */
+}
+
+h6 {
+  color: var(--tw-prose-headings);
+  font-weight: 400;
+  line-height: 1.6;
+  font-size: 0.9em;
+}
+
+h5 strong {
+  font-weight: 400;
+}
+
+h6::before {
+  background-color: var(--h6-ind-color);
+  /* Color of the bar */
+}
+
+h2 code {
+  font-size: 0.8611111em;
+}
+
+h3 code {
+  font-size: 0.9em;
+}
+
+h2+* {
+  margin-top: 0;
+}
+
+h3+* {
+  margin-top: 0;
+}
+
+h4+* {
+  margin-top: 0;
+}
+
+/* table */
+
+table {
+  width: 100%;
+  table-layout: auto;
+  text-align: left;
+  margin-top: 2em;
+  margin-bottom: 2em;
+  font-size: 0.9em;
+  line-height: 1.5;
+
+  border-spacing: 0;
+  border-collapse: collapse;
+  border: none;
+}
+
+/* table header */
+
+thead {
+  /* border-width: 1px; */
+  border-bottom-color: var(--theme-muted-blue);
+  background-color: var(--theme-muted-blue);
+}
+
+/* thead th {
+  color: var(--tw-prose-headings);
+  background-color: var(--theme-muted-blue);
+  font-weight: 600; */
+/* vertical-align: bottom; */
+/* padding-right: 0.6666667em;
+  padding-bottom: 0.8888889em;
+  padding-left: 0.6666667em;
+} */
+
+/* thead th:first-child {
+  border-top-left-radius: 0.5em;
+}
+
+thead th:last-child {
+  border-top-right-radius: 0.5em;
+} */
+
+/* tbody tr {
+  border-width: 1px;
+  border-bottom-color: var(--tw-prose-td-borders);
+  border-top-left-radius: 0.5em;
+  border-top-right-radius: 0.5em;
+}
+
+tbody tr:last-child {
+  border-width: 1px;
+  border-bottom-color: var(--tw-prose-td-borders);
+}
+
+tbody td {
+  vertical-align: baseline;
+  padding-top: 0.8888889em;
+  padding-right: 0.6666667em;
+  padding-bottom: 0.8888889em;
+  padding-left: 0.6666667em;
+} */
+
+/* tbody td:first-child {
+  padding-left: 0;
+}
+
+tbody td:last-child {
+  padding-right: 0;
+} */
+
+table th,
+table td {
+  border: 1px solid #efefef;
+  padding: .6em;
+}
+
+table th:first-child {
+  border-top-left-radius: 0.5em;
+}
+
+table th:last-child {
+  border-top-right-radius: 0.5em;
+}
+
+table tr:last-child td:first-child {
+  border-bottom-left-radius: 0.5em;
+}
+
+
+
+.md-grid-board tr[row="1"] {
+  background-color: var(--md-grid-header);
+}
+
+.md-grid-board a:hover,
+.md-grid-board a.md-active {
+  background: var(--md-grid-active);
+}
+
+.md-grid-board tr[row="1"] a:hover,
+.md-grid-board tr[row="1"] a.md-active {
+  background: var(--md-grid-header-active);
+}
+
+.md-grid-board .md-grid-ext {
+  background: var(--md-grid-ext);
+}
+
+.md-grid-board tr[row="1"] .md-grid-ext {
+  background: var(--md-grid-header-ext);
+}
+
+.md-grid-board a {
+  border-color: var(--md-grid-border-color) !important;
+}
+
+/* lists */
+
+ol {
+  list-style-type: decimal;
+  padding-left: 1.6em;
+  margin-top: 1em;
+  margin-bottom: 1em;
+}
+
+li {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+ul {
+  list-style-type: disc;
+  padding-left: 1.6em;
+  margin-top: 1em;
+  margin-bottom: 1em;
+}
+
+#write ul.task-list {
+  padding-left: 0;
+}
+
+#write li.task-list-item {
+  padding-left: 0.4em;
+}
+
+#write input[type="checkbox"] {
+  margin-left: -1em;
+}
+
+input[checked]~* {
+  opacity: 0.7;
+  text-decoration: line-through;
+}
+
+ol>li::marker {
+  font-weight: 400;
+  color: var(--tw-prose-counters);
+}
+
+ul>li::marker {
+  color: var(--tw-prose-bullets);
+}
+
+ul>li,
+ol>li {
+  padding-left: 0.4em;
+}
+
+ul>li p,
+ol>li p {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+#write>ul>li> :not(input):first-child,
+#write>ol>li> :not(input):first-child,
+#write>ul>li>input+*,
+#write>ol>li>input+* {
+  margin-top: 0;
+}
+
+#write>ul>li>*:last-child,
+#write>ol>li>*:last-child {
+  margin-bottom: 0;
+}
+
+#write ul>li>p:only-child,
+#write ol>li>p:only-child,
+#write ul>li>input+p:last-child,
+#write ol>li>input+p:last-child {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+ul ul,
+ul ol,
+ol ul,
+ol ol {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.ol-list .ol-list,
+.ol-list .ul-list,
+.ul-list .ul-list,
+.ul-list .ol-list {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+/* blockquote */
+blockquote {
+  font-weight: 400;
+  font-style: normal;
+  color: var(--tw-prose-quotes);
+  border-left-width: 0.25rem;
+  border-left-color: var(--theme-link);
+  quotes: "\201C" "\201D" "\2018" "\2019";
+  margin-top: 1.6em;
+  margin-bottom: 1.6em;
+  padding-left: 1.0666667em;
+  padding-top: 1em;
+  padding-bottom: 1em;
+  padding-right: 1em;
+  border-radius: 0 .5em .5em 0;
+  background-color: var(--theme-muted-blue);
+}
+
+blockquote h1::before,
+blockquote h2::before,
+blockquote h3::before,
+blockquote h4::before,
+blockquote h5::before,
+blockquote h6::before {
+  content: none;
+  /* Removes the content, effectively hiding the bar */
+  padding-left: 0 !important;
+}
+
+/* hr */
+hr {
+  border-color: var(--tw-prose-hr);
+  border-top-width: 1px;
+}
+
+[mdtype="hr"] {
+  margin-top: 1.4em;
+  margin-bottom: 1.4em;
+}
+
+p {
+  margin-top: 1em;
+  margin-bottom: 1em;
+}
+
+/* diagram panel */
+.md-diagram-panel {
+  color: var(--tw-prose-body);
+}
+
+.enable-diagrams .md-diagram .code-tooltip {
+  bottom: -1.9em;
+  right: 0;
+}
+
+.md-fences-adv-panel {
+  margin-top: 1.3em;
+}
+
+/* footnote definition */
+sup.md-footnote {
+  color: var(--footnote);
+  background-color: var(--footnote-bg);
+}
+
+.footnotes {
+  font-size: 0.85em;
+}
+
+.md-reverse-footnote-area a {
+  font-family: "IBMPlexSans";
+  text-decoration: none;
+  color: var(--tw-primary);
+  border-radius: 3px;
+}
+
+.md-hover-tip .code-tooltip-content {
+  font-size: 1.05rem;
+  line-height: 1.6;
+  padding: 0.8em 1.2em;
+}
+
+.md-reverse-footnote-area a:hover {
+  background-color: var(--item-hover-bg-color);
+}
+
+.md-def-name:before {
+  color: var(--md-char-color);
+}
+
+.md-rawblock.md-rawblock-on-edit,
+.md-rawblock:hover {
+  color: var(--tw-prose-pre-code);
+}
+
+.md-inline-math script {
+  color: var(--tw-prose-code);
+}
+
+g[data-mml-node="merror"]>rect[data-background] {
+  fill: var(--tw-highlight-color) !important;
+}
+
+g[data-mml-node="merror"]>g {
+  fill: #000 !important;
+  stroke: #000 !important;
+}
+
+.code-tooltip {
+  color: var(--tw-prose-pre-code);
+}
+
+.code-tooltip .md-mathjax-preview {
+  color: var(--tw-prose-body);
+}
+
+.md-htmlblock-container,
+.md-rawblock-input.md-rawblock-control,
+.md-htmlblock-panel.md-rawblock-control,
+.md-math-container {
+  border-radius: 0.5rem 0 0.5rem 0.5rem;
+}
+
+.md-rawblock-input {
+  font-size: var(--code-blocks-font-size);
+  padding: 0 1.3333333em;
+}
+
+.md-mathblock-panel .md-rawblock-input.md-rawblock-control {
+  border-top-color: transparent;
+  border-bottom-color: transparent;
+  border-radius: 0;
+}
+
+.md-mathblock-panel .md-rawblock-before {
+  padding-top: 1.1em;
+  border-top-left-radius: 0.5rem;
+}
+
+.md-mathblock-panel .md-rawblock-after {
+  padding-bottom: 1.1em;
+  border-bottom-left-radius: 0.5rem;
+  border-bottom-right-radius: 0.5rem;
+}
+
+.md-htmlblock-panel .md-rawblock-input {
+  padding-top: 1.1111111em;
+  padding-bottom: 1.1111111em;
+}
+
+.md-mathblock-panel .md-rawblock-before,
+.md-mathblock-panel .md-rawblock-after {
+  font-size: var(--code-blocks-font-size);
+  padding-left: calc(4px + 1.3333333em);
+  color: var(--code-bracket);
+}
+
+.md-rawblock-tooltip {
+  color: var(--tw-prose-pre-code);
+  border-radius: 0.5rem 0.5rem 0 0;
+}
+
+.md-rawblock-tooltip-name {
+  opacity: 1;
+}
+
+.md-comment {
+  font-size: var(--inline-code-font-size);
+  color: var(--code-comment);
+}
+
+.md-raw-inline,
+.md-tag,
+[md-inline="linebreak"],
+.md-image>.md-meta,
+.md-inline-math.md-expand>.md-inline-math-container {
+  font-size: var(--code-blocks-font-size);
+}
+
+/**
+  * Code Fences
+  * see http://support.typora.io/Code-Block-Styles
+  */
+
+:root {
+  --cf-bg-color: #23272E;
+}
+
+.md-fences {
+  color: var(--tw-prose-pre-code);
+  background-color: var(--cf-bg-color);
+  font-weight: 400;
+  font-size: var(--code-blocks-font-size);
+  line-height: 1.5;
+  margin-top: 1em;
+  margin-bottom: 1em;
+  border-radius: 0.5rem;
+  padding: 1em 1em;
+  -webkit-font-smoothing: initial;
+  -moz-osx-font-smoothing: initial;
+}
+
+.md-fences.md-focus {
+  border-bottom-right-radius: 0;
+}
+
+.md-fences>.code-tooltip {
+  height: 1.8rem;
+  bottom: -1.8rem;
+  font-size: 0.9rem;
+  border-radius: 0 0 0.5rem 0.5rem;
+}
+
+.code-tooltip .ty-input {
+  min-width: 10rem;
+}
+
+pre code {
+  background-color: transparent;
+  border-width: 0;
+  border-radius: 0;
+  padding: 0;
+  font-weight: inherit;
+  color: inherit;
+  font-size: inherit;
+  font-family: inherit;
+  line-height: inherit;
+}
+
+pre code::before {
+  content: none;
+}
+
+pre code::after {
+  content: none;
+}
+
+/* SYNTAX HIGHLIGHTING */
+
+:root {
+  /* --code-neutral:  rgb(126, 132, 142);
+  --code-cursor: var(--theme-900);
+  --code-string: rgb(152, 195, 121);
+  --code-number: rgb(209, 154, 102);
+  --code-tag: rgb(198, 120, 221);
+  --code-variable: rgb(97, 175, 239);
+  --code-operator: var(--theme-600);
+  --code-comment: rgb(126, 132, 142);
+  --code-bracket: rgb(171, 178, 191);
+  --code-citation: var(--theme-500);
+
+  --code-neutral-inverted: var(--theme-100);
+  --code-cursor-inverted: var(--theme-50);
+  --code-string-inverted: #7dd4fc;
+  --code-number-inverted: #fde68a;
+  --code-tag-inverted: #f472b5;
+  --code-variable-inverted: var(--theme-200);
+  --code-operator-inverted: var(--theme-400);
+  --code-comment-inverted: var(--theme-400);
+  --code-bracket-inverted: var(--theme-500);
+  --code-citation-inverted: var(--theme-400); */
+
+  --code-gutter: #495162;
+}
+
+#write .cm-s-inner {
+  /* --code-neutral: var(--code-neutral);
+  --code-cursor: var(--code-cursor-inverted);
+  --code-string: var(--code-string);
+  --code-number: var(--code-number);
+  --code-tag: var(--code-tag);
+  --code-variable: var(--code-variable);
+  --code-operator: var(--code-operator-inverted);
+  --code-comment: var(--code-comment);
+  --code-bracket: var(--code-bracket);
+  --code-citation: var(--code-citation); */
+
+  --code-neutral: rgb(126, 132, 142);
+  --code-cursor: var(--theme-50);
+  --code-string: #98C379;
+  --code-number: rgb(209, 154, 102);
+  --code-tag: #E06C75;
+  --code-keyword: rgb(198, 120, 221);
+  --code-variable: rgb(97, 175, 239);
+  --code-comment: #7E848E;
+  --code-operator: var(--code-comment);
+  --code-bracket: var(--code-comment);
+  --code-citation: var(--theme-500);
+}
+
+.CodeMirror-selectedtext {
+  background-color: transparent;
+}
+
+.CodeMirror-cursor {
+  border-left: 2px solid var(--code-cursor) !important;
+}
+
+.CodeMirror-gutters {
+  border-color: var(--code-gutter);
+}
+
+.cm-s-inner span.cm-string {
+  color: var(--code-string);
+}
+
+.cm-s-inner span.cm-number {
+  color: var(--code-number);
+}
+
+.cm-s-inner span.cm-tag {
+  color: var(--code-tag)
+}
+
+.cm-s-inner span.cm-keyword {
+  color: var(--code-keyword);
+}
+
+.cm-s-inner span.cm-qualifier {
+  color: white;
+}
+
+.cm-s-inner .CodeMirror-guttermarker,
+.cm-s-inner .CodeMirror-guttermarker-subtle,
+.cm-s-inner span.cm-comment.cm-def,
+.cm-s-inner span.cm-comment.cm-type,
+.cm-s-inner span.cm-builtin,
+.cm-s-inner span.cm-type,
+.cm-s-inner span.cm-header,
+.cm-s-inner span.cm-link,
+.cm-s-inner span.cm-error {
+  background: transparent;
+  color: var(--code-neutral);
+}
+
+
+.cm-s-inner span.cm-atom,
+.cm-s-inner span.cm-def {
+  color: var(--code-variable);
+}
+
+.cm-s-inner span.cm-attribute {
+  color: #D19A66;
+}
+
+.cm-s-inner span.cm-property,
+.cm-s-inner span.cm-property-2,
+.cm-s-inner span.cm-variable,
+.cm-s-inner span.cm-variable-2,
+.cm-s-inner span.cm-variable-3 {
+  color: rgb(97, 175, 239);
+}
+
+.cm-s-inner span.cm-type {
+  color: #0EB54F;
+}
+
+.cm-s-inner span.cm-comment {
+  color: var(--code-comment)
+}
+
+.cm-s-inner .CodeMirror-linenumber {
+  color: var(--code-gutter);
+}
+
+.cm-s-inner span.cm-operator {
+  color: var(--code-operator);
+}
+
+.cm-s-inner span.cm-bracket,
+.cm-s-inner span.cm-tag.cm-bracket,
+.cm-s-inner span.cm-meta {
+  color: var(--code-bracket);
+}
+
+.cm-s-inner span.cm-link {
+  text-decoration: underline;
+}
+
+/**
+  * Inline Elements
+  */
+
+/* basic styles */
+
+code {
+  color: var(--inline-code-font-color);
+  font-weight: normal;
+  font-size: var(--inline-code-font-size);
+  font-family: var(--monospace);
+  padding: .2rem .2rem;
+  border-radius: 3px;
+  background: #f5f7f9 !important;
+  display: inline;
+  vertical-align: bottom;
+  line-height: inherit;
+  -webkit-font-smoothing: initial;
+  -moz-osx-font-smoothing: initial;
+}
+
+
+
+/* code::before {
+  content: "`";
+}
+
+code::after {
+  content: "`";
+} */
+
+[md-inline="code"].md-expand>code::before,
+[md-inline="code"].md-expand>code::after {
+  content: "";
+}
+
+a code {
+  color: var(--tw-prose-links);
+}
+
+strong {
+  color: var(--tw-prose-bold);
+  font-weight: 600;
+}
+
+a {
+  color: var(--tw-prose-links);
+  text-decoration: none;
+  font-weight: 500;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* A block-level image should have a total top and bottom margin of 2em.
+It is always wrapped in a paragraph with 1.2em vertical margin, hence we
+add 0.8 here */
+p>.md-image:only-child {
+  margin-top: 0.8em !important;
+  margin-bottom: 0.8em !important;
+}
+
+.md-image>.md-meta {
+  color: var(--tw-prose-code);
+}
+
+.md-image>img {
+  border-radius: 0.5em !important;
+  border: none !important;
+}
+
+/* extend styles */
+
+mark {
+  border-radius: 3px;
+  padding: 0 2px;
+  background-color: var(--tw-highlight-color);
+}
+
+/**
+  * Source Code Mode
+  * see http://support.typora.io/Code-Block-Styles
+  */
+
+.cm-s-typora-default .CodeMirror-activeline-background {
+  background-color: var(--item-hover-bg-color);
+}
+
+#typora-source {
+  font-family: var(--monospace);
+  color: var(--typora-source-body);
+}
+
+#typora-source .cm-header {
+  color: var(--code-tag);
+}
+
+#typora-source .cm-link {
+  color: var(--code-string);
+}
+
+#typora-source .cm-string {
+  color: var(--code-string);
+}
+
+#typora-source .cm-comment {
+  color: var(--code-comment);
+}
+
+#typora-source .cm-atom {
+  color: var(--code-citation);
+}
+
+#typora-source .cm-tag {
+  color: var(--code-tag);
+}
+
+#typora-source .cm-attribute {
+  color: var(--code-variable);
+}
+
+#typora-source .cm-bracket {
+  color: var(--code-bracket);
+}
+
+.file-list-item-file-ext-part {
+  opacity: 0.5;
+}
+
+#write div.md-toc-tooltip {
+  background-color: var(--tw-prose-bg);
+}
+
+.md-toc {
+  font-size: 0.8em;
+}
+
+.md-toc-h1 .md-toc-inner {
+  margin-left: 0;
+}
+
+.md-toc-h2 .md-toc-inner {
+  margin-left: 1em;
+}
+
+.md-toc-h3 .md-toc-inner {
+  margin-left: 2em;
+}
+
+.md-toc-h4 .md-toc-inner {
+  margin-left: 3em;
+}
+
+.md-toc-h5 .md-toc-inner {
+  margin-left: 4em;
+}
+
+.md-toc-h6 .md-toc-inner {
+  margin-left: 5em;
+}
+
+#typora-sidebar {
+  border-right: var(--window-border);
+}
+
+.sidebar-tab {
+  text-transform: none;
+  font-weight: 700;
+  font-size: 1.1em;
+}
+
+.md-search-hit {
+  color: var(--search-hit-text-font-color);
+  background-color: var(--search-hit-text-bg-color);
+}
+
+#md-searchpanel {
+  box-shadow: none;
+  filter: var(--tw-drop-shadow-md);
+}
+
+#md-searchpanel .btn:not(.close-btn):hover {
+  box-shadow: none;
+  -webkit-box-shadow: none;
+  background-color: var(--tw-button-hover-bg);
+}
+
+#md-searchpanel input,
+#md-searchpanel .btn,
+#searchpanel-msg {
+  border-radius: 5px;
+}
+
+#searchpanel-msg {
+  color: var(--theme-500);
+  border-color: var(--theme-300);
+  background: var(--theme-100);
+}
+
+.form-control {
+  border-color: var(--panel-border-color);
+}
+
+.btn-default {
+  background-color: var(--button-bg);
+}
+
+
+
+</style><title>验收</title>
+</head>
+<body class='typora-export os-windows'><div class='typora-export-content'>
+<div id='write'  class=''><h2 id='西电计科b测------计算机网络综合实验'><span>西电计科B测——计算机网络综合实验</span></h2><blockquote><p><span>本博客旨在帮助西电的学弟学妹们顺利“水”过B测，主要对往届学长的</span><a href='https://blog.csdn.net/qq_31028407/article/details/131118006'><span>西电B测-计算机专业-计算机网络综合设计实验一站式指南</span></a><span>博客中出现的验收问题进行了整理总结(仅供参考，有一些问题蛮抽象的，比如RIP报文组成，基本不可能会问)，其中问到我们组的问题标了下划线。这次B测大家普遍感觉唐军老师验收不严，很好过，只要大家自己做一遍，再看看相关的原理，肯定不会挂。</span></p></blockquote><ul><li><span>我们组的网络拓扑图：</span>
+<img src="https://s2.loli.net/2024/04/27/vTjXuQVptkYCmDJ.png" alt="image-20240427232259350"  /></li></ul><h3 id='一静态路由动态路由及路由连接'><span>一、静态路由/动态路由及路由连接</span></h3><ol start='' ><li><p><u><span>你们使用的是什么路由设置</span></u><span>：静态</span></p></li><li><p><span>静态和动态路由的优点，从规模和维护成本上考虑</span></p><ul><li><p><strong><span>规模：</span></strong></p><ul><li><strong><span>静态路由：</span></strong><span> 适用于较小的网络规模，因为手动配置静态路由表可能会变得繁琐和容易出错，尤其是在大型网络中。</span></li><li><strong><span>动态路由：</span></strong><span> 适用于大型网络，因为它能够自动适应网络拓扑和流量变化，提供更高的可伸缩性。</span></li></ul></li><li><p><strong><span>维护成本：</span></strong></p><ul><li><strong><span>静态路由：</span></strong><span> 相对较低，因为配置简单，不需要动态更新路由表。但是，在网络拓扑或流量变化时，需要手动修改路由表，增加了维护成本。</span></li><li><strong><span>动态路由：</span></strong><span> 初始配置可能较复杂，但是一旦配置完成，路由表会自动更新以适应网络变化，减少了手动维护的工作量。</span></li></ul></li></ul></li><li><p><span>动态路由有哪些，他们是域内还是域外的</span></p><ol start='' ><li><p><strong><span>域内路由协议：</span></strong></p><ul><li><strong><span>OSPF（Open Shortest Path First）：</span></strong><span> 基于链路状态的路由协议，用于在单个自治系统内部交换路由信息。OSPF使用Dijkstra算法计算最短路径。</span></li><li><strong><span>IS-IS（Intermediate System to Intermediate System）：</span></strong><span> 也是一种链路状态路由协议，通常用于大型网络中，如ISP网络。</span></li><li><strong><span>RIP（Routing Information Protocol）：</span></strong><span> 距离向量路由协议，用于小型网络中。RIP基于跳数来计算最佳路径。</span></li></ul></li><li><p><strong><span>域外路由协议：</span></strong></p><ul><li><strong><span>BGP（Border Gateway Protocol）：</span></strong><span> 用于在不同自治系统之间交换路由信息。BGP是一个路径矢量协议，根据AS路径选择最佳路由。</span></li></ul></li></ol></li><li><p><u><span>静态路由路由表是在哪些设备上配置的，是如何配置的（解释一下指令，还有下一跳的方式，下一跳的目标地址在哪）</span></u></p><p><span>AR1, LSW2，AR2: 例如：</span><code>ip route-static 192.168.3.0 24 192.168.5.195</code><span> </span></p><p><span>其中：第一个地址是目标网络的网络地址和子网掩码；第二个地址是下一跳地址，就是数据包离开当前设备后，需要去的下一个设备的地址(在这里就是和路由器相连的接口地址)</span></p></li><li><p><span>rip路由为什么只配置路由器两端网络号(1，2配2，3配)就行，那样网段1和3怎么通信？</span></p><p><span>		</span><span>在RIP中，当配置路由时只需配置相邻路由器之间直接连接的网络号，是因为RIP是一种距离向量路由协议，它只关心到达目的地网络的跳数（即路由的距离），而不考虑具体的网络拓扑。如果网络中存在多个路由器，每个路由器只需知道到达其它网络的下一跳路由器即可，而不需要知道到达其它网络的整个路径。</span></p></li><li><p><span>两个主机之间为什么能ping通，不同网段之间的主机怎么通信（比如说路由器两端的pc是通过直连路由实现的）</span></p><p><span>		</span><span>当两个主机处于同一个网络（同一个网段）时，它们可以直接通过 ARP（地址解析协议）找到对方的 MAC 地址，然后直接进行通信，比如使用 ICMP 协议进行 ping 测试。</span></p><p><span>		</span><span>当两个主机处于不同的网络（不同的网段）时，它们不能直接进行通信，因为它们不在同一个广播域内，无法直接通过 ARP 找到对方的 MAC 地址。在这种情况下，需要通过路由器来实现不同网段主机之间的通信。</span></p><p><span>		</span><span>假设有两个不同网段的主机 A 和 B，它们想要进行通信。它们分别连接到同一台路由器的不同接口上。路由器在收到来自主机 A 的数据包时，会检查数据包的目的 IP 地址，并查找自己的路由表，找到到达目的地的最佳路径。然后，路由器将数据包转发到相应的接口，进而将数据包发送给主机 B。在主机 B 回复时，路由器会将数据包转发给主机 A。</span></p><p><span>这种情况下，主机 A 和主机 B 通过路由器进行通信，实现了不同网段主机之间的通信。</span></p></li><li><p><span>rip的工作原理</span></p><p><span>RIP（Routing Information Protocol）是一种基于距离向量的动态路由协议，用于在小型和中型网络中传播路由信息。以下是RIP的基本工作原理：</span></p><ol start='' ><li><strong><span>距离向量：</span></strong><span> RIP使用距离向量作为路由选择的依据。每个路由器维护一个距离向量表，其中包含到达每个目的网络的跳数（即路由的距离）和下一跳路由器的信息。</span></li><li><strong><span>路由更新：</span></strong><span> 路由器周期性地向相邻路由器发送路由更新消息，包含自己所知道的所有路由信息。这些更新消息称为RIP响应。</span></li><li><strong><span>路由选择：</span></strong><span> 当路由器收到来自相邻路由器的路由更新消息时，它会比较接收到的路由与自己的距离向量表中的路由，选择距离最短的路径作为最佳路径，并更新自己的距离向量表。</span></li><li><strong><span>路由失效：</span></strong><span> 如果一个路由器在一定时间内没有收到来自相邻路由器的路由更新消息，它会认为该路由失效，并将该路由从距离向量表中移除。</span></li><li><strong><span>路由循环避免：</span></strong><span> RIP使用了一些机制来避免路由环路的发生，如最大跳数限制和毒性逆转（将失效路由的距离设置为无穷大）。</span></li></ol><p><span>总的来说，RIP通过周期性的路由更新和基于距离向量的路由选择，使得网络中的路由器能够了解到整个网络的拓扑结构，并选择最佳路径进行数据转发，从而实现了动态路由的功能。</span></p></li></ol><h3 id='二dhcp'><span>二、DHCP</span></h3><ol start='' ><li><p><span>dhcp在哪开启？AR1</span></p></li><li><p><span>dhcp分配地址在哪实现的？AR1</span></p></li><li><p><u><span>dhcp的过程？（就是你在路由器上输入指令的顺序用文字描述出来，先设置路由器端口ip，然后允许dhcp，创建线程池，配置线程池网段、网关......）</span></u></p></li><li><p><span>dhcp的原理</span></p><p><span>DHCP（Dynamic Host Configuration Protocol）是一种用于自动分配IP地址和其他网络配置参数的网络协议。以下是DHCP的基本工作原理：</span></p><ol start='' ><li><strong><span>客户端发现：</span></strong><span> 当设备加入网络或重新连接到网络时，它会发送一个广播消息（称为DHCP Discover），请求DHCP服务器提供IP地址和其他配置信息。</span></li><li><strong><span>服务器提供：</span></strong><span> DHCP服务器接收到客户端的DHCP Discover 消息后，会向其发送一个DHCP Offer 消息，其中包含可用的IP地址和其他配置信息，如子网掩码、网关、DNS服务器等。</span></li><li><strong><span>客户端请求：</span></strong><span> 客户端收到DHCP Offer后，会选择其中一个提供的IP地址，并向DHCP服务器发送一个DHCP Request消息，确认使用该IP地址。</span></li><li><strong><span>服务器确认：</span></strong><span> DHCP服务器收到客户端的DHCP Request消息后，会向客户端发送一个DHCP Acknowledgment消息，确认分配给客户端的IP地址和其他配置信息。</span></li><li><strong><span>续约与释放：</span></strong><span> 客户端在使用IP地址的过程中，会定期向DHCP服务器发送DHCP Request消息进行地址续约，以保持IP地址的有效性。当客户端不再需要IP地址时，会发送一个DHCP Release消息释放该地址。</span></li></ol><p><span>通过DHCP，网络管理员可以集中管理IP地址的分配和网络配置，同时客户端设备可以自动获取所需的网络配置信息，使网络配置更加灵活和便捷。</span></p></li><li><p><span>ip池是怎么分配IP地址的（通过dhcp服务端分配....）</span></p><p><span>在DHCP服务器上配置的IP地址池是一组可用于分配的IP地址范围。当DHCP服务器收到来自客户端的DHCP Discover消息时，它会从IP地址池中选择一个可用的IP地址分配给客户端。分配IP地址的过程如下：</span></p><ol start='' ><li><strong><span>选择可用IP地址：</span></strong><span> DHCP服务器会检查IP地址池中哪些地址尚未被分配或者已经分配但过期未续约。服务器会选择一个未被使用的IP地址作为分配目标。</span></li><li><strong><span>分配IP地址：</span></strong><span> DHCP服务器将选定的IP地址包含在DHCP Offer消息中，并发送给客户端。</span></li><li><strong><span>确认分配：</span></strong><span> 客户端收到DHCP Offer消息后，会选择接受其中的IP地址。客户端会向DHCP服务器发送DHCP Request消息，确认接受所提供的IP地址。</span></li><li><strong><span>分配成功：</span></strong><span> DHCP服务器收到客户端的DHCP Request消息后，会向客户端发送DHCP Acknowledgment消息，确认IP地址的分配成功。客户端随后会配置其网络接口，开始使用该IP地址进行通信。</span></li><li><strong><span>续约和释放：</span></strong><span> 在使用IP地址期间，客户端会定期向DHCP服务器发送DHCP Request消息进行地址续约。如果客户端不再需要IP地址，可以发送DHCP Release消息释放该地址，使其返回到IP地址池中可供其他客户端使用。</span></li></ol><p><span>通过这种方式，DHCP服务器可以有效地管理和分配IP地址，使网络中的设备可以自动获取所需的网络配置，减少了手动配置IP地址的工作量。</span></p></li><li><p><span>如果主机D也要用dhcp如何设置</span></p><p><span>在AR2的端口g0/0/1上配置DHCP</span></p></li></ol><h3 id='三限速'><span>三、限速</span></h3><ol start='' ><li><u><span>说一下限速的命令</span></u><span>，其中一些单词有什么含义，最后那个500000是什么意思，什么单位</span></li></ol><blockquote><p><span>设置的平均速率cir，单位是kbps</span></p></blockquote><h3 id='四arp'><span>四、</span><u><span>ARP</span></u></h3><ol start='' ><li><p><span>ARP（Address Resolution Protocol，地址解析协议）是用来将IP地址解析为MAC地址的协议，ARP表用于存储IP地址和MAC地址的映射关系。</span></p></li><li><p><span>为什么需要ARP：局域网中，当主机或其他三层网络设备发送数据到，仅仅知道对方的IP地址是不够的，因为IP报文必须封装成帧才能通过物理网络发送（主机的以太网网卡只能之别MAC地址），ARP可以确定目标IP地址对应的MAC地址，将IP数据包封装在以太网帧中，以便在局域网中传输。</span></p></li><li><p><span>ARP报文组成：</span></p><p><strong><span>硬件类型（Hardware Type）：</span></strong><span> 指定网络硬件的类型，例如以太网。</span></p></li></ol><p><span>		</span><strong><span>协议类型（Protocol Type）：</span></strong><span> 指定网络层协议的类型，例如IPv4。</span></p><p><span>		</span><strong><span>硬件地址长度（Hardware Address Length）：</span></strong><span> 指定硬件地址的长度，以字节为单位，例如以太网中为6字节。</span></p><p><span>		</span><strong><span>协议地址长度（Protocol Address Length）：</span></strong><span> 指定协议地址的长度，以字节为单位，例如IPv4地址为4字节。</span></p><p><span>		</span><strong><span>操作码（Opcode）：</span></strong><span> 指定ARP消息的类型，例如ARP请求或ARP响应。</span></p><p><span>		</span><strong><span>发送方硬件地址（Sender Hardware Address）：</span></strong><span> 发送ARP请求的设备的MAC地址。</span></p><p><span>		</span><strong><span>发送方协议地址（Sender Protocol Address）：</span></strong><span> 发送ARP请求的设备的IP地址。</span></p><p><span>		</span><strong><span>目标硬件地址（Target Hardware Address）：</span></strong><span> 用于ARP响应中，指定目标设备的MAC地址。</span></p><p><span>		</span><strong><span>目标协议地址（Target Protocol Address）：</span></strong><span> 用于ARP请求和响应中，指定目标设备的IP地址。</span></p><p><img src="https://s2.loli.net/2024/04/22/CkLEJd1fjKgsYoZ.webp" referrerpolicy="no-referrer" alt="img"></p><blockquote><p><strong><span>ARP泛洪</span></strong></p></blockquote><ul><li><p><strong><span>概念</span></strong><span>：</span></p><p><em><span>场景一</span></em><span>：处理ARP报文和维护ARP表需要消耗系统资源，ARP表项的规模具有规格限制；攻击者通过</span><strong><span>伪造大量源IP地址变化的ARP报文，使得设备的ARP表资源被无效ARP条目耗尽</span></strong><span>，从而合法的ARP报文不能正常生成ARP表项，通信中断。</span></p><p>&nbsp;</p><p><em><span>场景二</span></em><span>：</span><strong><span>给设备发送大量目标IP地址不能解析的IP报文，设备会产生大量的ARP Miss消息</span></strong><span>，生成并广播大量的ARP请求报文试图对目标IP地址进行解析，从而造成CPU负荷过重。</span></p></li><li><p><strong><span>应对方法</span></strong><span>：</span></p></li></ul><ol start='' ><li><strong><span>配置ARP报文限速</span></strong><span>：设备限制接受处理的ARP报文数量来保护CPU资源</span></li></ol><pre class="md-fences md-end-block ty-contain-cm modeLoaded" spellcheck="false" lang="apl"><div class="CodeMirror cm-s-inner cm-s-null-scroll CodeMirror-wrap" lang="apl"><div style="overflow: hidden; position: relative; width: 3px; height: 0px; top: 8.10851px; left: 3.99304px;"><textarea autocorrect="off" autocapitalize="off" spellcheck="false" tabindex="0" style="position: absolute; bottom: -1em; padding: 0px; width: 1000px; height: 1em; outline: none;"></textarea></div><div class="CodeMirror-scrollbar-filler" cm-not-content="true"></div><div class="CodeMirror-gutter-filler" cm-not-content="true"></div><div class="CodeMirror-scroll" tabindex="-1"><div class="CodeMirror-sizer" style="margin-left: 0px; margin-bottom: 0px; border-right-width: 0px; padding-right: 0px; padding-bottom: 0px;"><div style="position: relative; top: 0px;"><div class="CodeMirror-lines" role="presentation"><div role="presentation" style="position: relative; outline: none;"><div class="CodeMirror-measure"></div><div class="CodeMirror-measure"></div><div style="position: relative; z-index: 1;"></div><div class="CodeMirror-code" role="presentation"><div class="CodeMirror-activeline" style="position: relative;"><div class="CodeMirror-activeline-background CodeMirror-linebackground"></div><div class="CodeMirror-gutter-background CodeMirror-activeline-gutter" style="left: 0px; width: 0px;"></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-keyword">sys</span></span></pre></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-keyword">int</span> <span class="cm-keyword">接口</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-keyword">arp</span> <span class="cm-keyword">anti-attack</span> <span class="cm-keyword">rate-limit</span> <span class="cm-keyword">enable</span> <span class="cm-comment">#开启ARP报文限速</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-keyword">arp</span> <span class="cm-keyword">anti-attack</span> <span class="cm-keyword">rate-limit</span> <span class="cm-number">80</span> <span class="cm-number">1</span> <span class="cm-comment">#限制每秒最多处理的ARP报文数量为80</span></span></pre></div></div></div></div></div><div style="position: absolute; height: 0px; width: 1px; border-bottom: 0px solid transparent; top: 81px;"></div><div class="CodeMirror-gutters" style="display: none; height: 81px;"></div></div></div></pre><ol start='2' ><li><strong><span>配置ARP Miss消息限速</span></strong><span>：限制ARP Miss消息处理的速率，从而控制ARP请求报文发送数量</span></li></ol><pre class="md-fences md-end-block ty-contain-cm modeLoaded" spellcheck="false" lang="apl"><div class="CodeMirror cm-s-inner cm-s-null-scroll CodeMirror-wrap" lang="apl"><div style="overflow: hidden; position: relative; width: 3px; height: 0px; top: 8.10851px; left: 3.99304px;"><textarea autocorrect="off" autocapitalize="off" spellcheck="false" tabindex="0" style="position: absolute; bottom: -1em; padding: 0px; width: 1000px; height: 1em; outline: none;"></textarea></div><div class="CodeMirror-scrollbar-filler" cm-not-content="true"></div><div class="CodeMirror-gutter-filler" cm-not-content="true"></div><div class="CodeMirror-scroll" tabindex="-1"><div class="CodeMirror-sizer" style="margin-left: 0px; margin-bottom: 0px; border-right-width: 0px; padding-right: 0px; padding-bottom: 0px;"><div style="position: relative; top: 0px;"><div class="CodeMirror-lines" role="presentation"><div role="presentation" style="position: relative; outline: none;"><div class="CodeMirror-measure"><pre><span>xxxxxxxxxx</span></pre></div><div class="CodeMirror-measure"></div><div style="position: relative; z-index: 1;"></div><div class="CodeMirror-code" role="presentation"><div class="CodeMirror-activeline" style="position: relative;"><div class="CodeMirror-activeline-background CodeMirror-linebackground"></div><div class="CodeMirror-gutter-background CodeMirror-activeline-gutter" style="left: 0px; width: 0px;"></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-keyword">sys</span></span></pre></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-keyword">arp-miss</span> <span class="cm-keyword">anti-attack</span> <span class="cm-keyword">rate-limit</span> <span class="cm-keyword">enable</span> <span class="cm-comment">#开启ARP Miss消息限速</span></span></pre></div></div></div></div></div><div style="position: absolute; height: 0px; width: 1px; border-bottom: 0px solid transparent; top: 40px;"></div><div class="CodeMirror-gutters" style="display: none; height: 40px;"></div></div></div></pre><ol start='3' ><li><strong><span>ARP表项严格学习</span></strong><span>：只有本设备主动发送的ARP请求报文的应答报文才会触发ARP表项的学习更新</span></li></ol><pre class="md-fences md-end-block ty-contain-cm modeLoaded" spellcheck="false" lang="apl"><div class="CodeMirror cm-s-inner cm-s-null-scroll CodeMirror-wrap" lang="apl"><div style="overflow: hidden; position: relative; width: 3px; height: 0px; top: 8.10851px; left: 3.99304px;"><textarea autocorrect="off" autocapitalize="off" spellcheck="false" tabindex="0" style="position: absolute; bottom: -1em; padding: 0px; width: 1000px; height: 1em; outline: none;"></textarea></div><div class="CodeMirror-scrollbar-filler" cm-not-content="true"></div><div class="CodeMirror-gutter-filler" cm-not-content="true"></div><div class="CodeMirror-scroll" tabindex="-1"><div class="CodeMirror-sizer" style="margin-left: 0px; margin-bottom: 0px; border-right-width: 0px; padding-right: 0px; padding-bottom: 0px;"><div style="position: relative; top: 0px;"><div class="CodeMirror-lines" role="presentation"><div role="presentation" style="position: relative; outline: none;"><div class="CodeMirror-measure"><pre><span>xxxxxxxxxx</span></pre></div><div class="CodeMirror-measure"></div><div style="position: relative; z-index: 1;"></div><div class="CodeMirror-code" role="presentation"><div class="CodeMirror-activeline" style="position: relative;"><div class="CodeMirror-activeline-background CodeMirror-linebackground"></div><div class="CodeMirror-gutter-background CodeMirror-activeline-gutter" style="left: 0px; width: 0px;"></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-keyword">sys</span></span></pre></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-keyword">int</span> <span class="cm-keyword">接口</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-keyword">arp</span> <span class="cm-keyword">learning</span> <span class="cm-keyword">strict</span> <span class="cm-keyword">force-enable</span></span></pre></div></div></div></div></div><div style="position: absolute; height: 0px; width: 1px; border-bottom: 0px solid transparent; top: 61px;"></div><div class="CodeMirror-gutters" style="display: none; height: 61px;"></div></div></div></pre><blockquote><p><strong><span>ARP欺骗</span></strong></p></blockquote><ul><li><strong><span>概念</span></strong><span>：</span><strong><span>攻击者通过发送伪造的ARP报文，恶意修改设备或网络内其他用户主机的ARP表项</span></strong><span>，造成用户或网络的报文通信异常</span></li></ul><p><span>攻击者伪造的报文只修改了mac，还是拥有正确的ip地址，为啥还是可以使通信异常：在局域网中通信是通过物理地址（MAC地址）进行传输的，所以攻击者只需伪造MAC地址即可干扰通信</span></p><ul><li><strong><span>应对方法</span></strong><span>：</span></li></ul><ol start='' ><li><strong><span>配置ARP报文合法性检查</span></strong><span>：对收到的ARP报文，检查以太网数据帧首部的源MAC地址和ARP报文数据区中的源MAC地址是否一致，不一致就丢弃</span></li></ol><pre class="md-fences md-end-block ty-contain-cm modeLoaded" spellcheck="false" lang="apl"><div class="CodeMirror cm-s-inner cm-s-null-scroll CodeMirror-wrap" lang="apl"><div style="overflow: hidden; position: relative; width: 3px; height: 0px; top: 8.10851px; left: 3.99304px;"><textarea autocorrect="off" autocapitalize="off" spellcheck="false" tabindex="0" style="position: absolute; bottom: -1em; padding: 0px; width: 1000px; height: 1em; outline: none;"></textarea></div><div class="CodeMirror-scrollbar-filler" cm-not-content="true"></div><div class="CodeMirror-gutter-filler" cm-not-content="true"></div><div class="CodeMirror-scroll" tabindex="-1"><div class="CodeMirror-sizer" style="margin-left: 0px; margin-bottom: 0px; border-right-width: 0px; padding-right: 0px; padding-bottom: 0px;"><div style="position: relative; top: 0px;"><div class="CodeMirror-lines" role="presentation"><div role="presentation" style="position: relative; outline: none;"><div class="CodeMirror-measure"><pre><span>xxxxxxxxxx</span></pre></div><div class="CodeMirror-measure"></div><div style="position: relative; z-index: 1;"></div><div class="CodeMirror-code" role="presentation"><div class="CodeMirror-activeline" style="position: relative;"><div class="CodeMirror-activeline-background CodeMirror-linebackground"></div><div class="CodeMirror-gutter-background CodeMirror-activeline-gutter" style="left: 0px; width: 0px;"></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-keyword">sys</span></span></pre></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-keyword">arp</span> <span class="cm-keyword">anti-attack</span> <span class="cm-keyword">packet-check</span> <span class="cm-keyword">sender-mac</span></span></pre></div></div></div></div></div><div style="position: absolute; height: 0px; width: 1px; border-bottom: 0px solid transparent; top: 40px;"></div><div class="CodeMirror-gutters" style="display: none; height: 40px;"></div></div></div></pre><ol start='2' ><li><strong><span>配置ARP表项固化</span></strong><span>：</span></li></ol><p><img src="https://s2.loli.net/2024/04/22/wfKHblhLXyrco9G.png" referrerpolicy="no-referrer" alt="image-20240422204107740"></p><pre class="md-fences md-end-block ty-contain-cm modeLoaded" spellcheck="false" lang="apl"><div class="CodeMirror cm-s-inner cm-s-null-scroll CodeMirror-wrap" lang="apl"><div style="overflow: hidden; position: relative; width: 3px; height: 0px; top: 8.10851px; left: 3.99304px;"><textarea autocorrect="off" autocapitalize="off" spellcheck="false" tabindex="0" style="position: absolute; bottom: -1em; padding: 0px; width: 1000px; height: 1em; outline: none;"></textarea></div><div class="CodeMirror-scrollbar-filler" cm-not-content="true"></div><div class="CodeMirror-gutter-filler" cm-not-content="true"></div><div class="CodeMirror-scroll" tabindex="-1"><div class="CodeMirror-sizer" style="margin-left: 0px; margin-bottom: 0px; border-right-width: 0px; padding-right: 0px; padding-bottom: 0px;"><div style="position: relative; top: 0px;"><div class="CodeMirror-lines" role="presentation"><div role="presentation" style="position: relative; outline: none;"><div class="CodeMirror-measure"><pre><span>xxxxxxxxxx</span></pre></div><div class="CodeMirror-measure"></div><div style="position: relative; z-index: 1;"></div><div class="CodeMirror-code" role="presentation"><div class="CodeMirror-activeline" style="position: relative;"><div class="CodeMirror-activeline-background CodeMirror-linebackground"></div><div class="CodeMirror-gutter-background CodeMirror-activeline-gutter" style="left: 0px; width: 0px;"></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-keyword">sys</span></span></pre></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-keyword">arp</span> <span class="cm-keyword">anti-attack</span> <span class="cm-keyword">entry-check</span> [ <span class="cm-keyword">fixed-mac</span> <span class="cm-keyword">|</span> <span class="cm-keyword">fixed-all</span> <span class="cm-keyword">|</span> <span class="cm-keyword">send-ack</span> ] <span class="cm-keyword">enable</span></span></pre></div></div></div></div></div><div style="position: absolute; height: 0px; width: 1px; border-bottom: 0px solid transparent; top: 40px;"></div><div class="CodeMirror-gutters" style="display: none; height: 40px;"></div></div></div></pre><ul><li><span>查看ARP安全配置情况</span></li></ul><pre class="md-fences md-end-block ty-contain-cm modeLoaded" spellcheck="false" lang="apl"><div class="CodeMirror cm-s-inner cm-s-null-scroll CodeMirror-wrap" lang="apl"><div style="overflow: hidden; position: relative; width: 3px; height: 0px; top: 8.10851px; left: 3.99304px;"><textarea autocorrect="off" autocapitalize="off" spellcheck="false" tabindex="0" style="position: absolute; bottom: -1em; padding: 0px; width: 1000px; height: 1em; outline: none;"></textarea></div><div class="CodeMirror-scrollbar-filler" cm-not-content="true"></div><div class="CodeMirror-gutter-filler" cm-not-content="true"></div><div class="CodeMirror-scroll" tabindex="-1"><div class="CodeMirror-sizer" style="margin-left: 0px; margin-bottom: 0px; border-right-width: 0px; padding-right: 0px; padding-bottom: 0px;"><div style="position: relative; top: 0px;"><div class="CodeMirror-lines" role="presentation"><div role="presentation" style="position: relative; outline: none;"><div class="CodeMirror-measure"><pre><span>xxxxxxxxxx</span></pre></div><div class="CodeMirror-measure"></div><div style="position: relative; z-index: 1;"></div><div class="CodeMirror-code" role="presentation"><div class="CodeMirror-activeline" style="position: relative;"><div class="CodeMirror-activeline-background CodeMirror-linebackground"></div><div class="CodeMirror-gutter-background CodeMirror-activeline-gutter" style="left: 0px; width: 0px;"></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-keyword">display</span> <span class="cm-keyword">arp</span> <span class="cm-keyword">anti-attack</span> <span class="cm-keyword">configuration</span> <span class="cm-keyword">all</span></span></pre></div></div></div></div></div></div><div style="position: absolute; height: 0px; width: 1px; border-bottom: 0px solid transparent; top: 20px;"></div><div class="CodeMirror-gutters" style="display: none; height: 20px;"></div></div></div></pre><hr /><p>&nbsp;</p><blockquote><p><span>第一次Ping测试出现‘Request Time Out’是正常的，因为第一次通信主机中的ARP高速缓存表不存在其他主机的MAC地址，需要通过ARP协议解析去获得，第二次Ping就会互相正常通信。</span></p></blockquote><h3 id='五配置命令'><span>五、配置命令</span></h3><p><img src="https://s2.loli.net/2024/04/27/8KjcZFBboNvIksf.png" referrerpolicy="no-referrer" alt="image-20240427233516690"></p><ul><li><span>LSW1</span></li></ul><pre class="md-fences md-end-block ty-contain-cm modeLoaded" spellcheck="false" lang="apl"><div class="CodeMirror cm-s-inner cm-s-null-scroll CodeMirror-wrap" lang="apl"><div style="overflow: hidden; position: relative; width: 3px; height: 0px; top: 8.10851px; left: 3.99304px;"><textarea autocorrect="off" autocapitalize="off" spellcheck="false" tabindex="0" style="position: absolute; bottom: -1em; padding: 0px; width: 1000px; height: 1em; outline: none;"></textarea></div><div class="CodeMirror-scrollbar-filler" cm-not-content="true"></div><div class="CodeMirror-gutter-filler" cm-not-content="true"></div><div class="CodeMirror-scroll" tabindex="-1"><div class="CodeMirror-sizer" style="margin-left: 0px; margin-bottom: 0px; border-right-width: 0px; padding-right: 0px; padding-bottom: 0px;"><div style="position: relative; top: 0px;"><div class="CodeMirror-lines" role="presentation"><div role="presentation" style="position: relative; outline: none;"><div class="CodeMirror-measure"><pre>x</pre></div><div class="CodeMirror-measure"></div><div style="position: relative; z-index: 1;"></div><div class="CodeMirror-code" role="presentation" style=""><div class="CodeMirror-activeline" style="position: relative;"><div class="CodeMirror-activeline-background CodeMirror-linebackground"></div><div class="CodeMirror-gutter-background CodeMirror-activeline-gutter" style="left: 0px; width: 0px;"></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-keyword">sys</span> </span></pre></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-keyword">vlan</span> <span class="cm-number">1</span> </span></pre><div class="" style="position: relative;"><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-keyword">int</span> <span class="cm-keyword">g0</span><span class="cm-operator cm-apl-reduce">/</span><span class="cm-number">0</span><span class="cm-operator cm-apl-reduce">/</span><span class="cm-number">1</span> </span></pre></div><div class="" style="position: relative;"><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-keyword">port</span> <span class="cm-keyword">link-type</span> <span class="cm-keyword">access</span> <span class="cm-comment"># 端口的链路类型为 Access 模式，交换机会把接受到的数据帧直接发送到指定vlan</span></span></pre></div><div class="" style="position: relative;"><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-keyword">port</span> <span class="cm-keyword">default</span> <span class="cm-keyword">vlan</span> <span class="cm-number">1</span> <span class="cm-comment"># 设置为端口都发送到默认VLAN1中</span></span></pre></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-keyword">int</span> <span class="cm-keyword">g0</span><span class="cm-operator cm-apl-reduce">/</span><span class="cm-number">0</span><span class="cm-operator cm-apl-reduce">/</span><span class="cm-number">2</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-keyword">port</span> <span class="cm-keyword">link-type</span> <span class="cm-keyword">access</span></span></pre><div class="" style="position: relative;"><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-keyword">port</span> <span class="cm-keyword">default</span> <span class="cm-keyword">vlan</span> <span class="cm-number">1</span></span></pre></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-keyword">int</span> <span class="cm-keyword">g0</span><span class="cm-operator cm-apl-reduce">/</span><span class="cm-number">0</span><span class="cm-operator cm-apl-reduce">/</span><span class="cm-number">3</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-keyword">port</span> <span class="cm-keyword">link-type</span> <span class="cm-keyword">access</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-keyword">port</span> <span class="cm-keyword">default</span> <span class="cm-keyword">vlan</span> <span class="cm-number">1</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-comment"># 这样做可以使与交换机端口相连的设备同处于一个广播域中，相互通信</span></span></pre><div class="" style="position: relative;"><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-keyword">quit</span></span></pre></div></div></div></div></div></div><div style="position: absolute; height: 0px; width: 1px; border-bottom: 0px solid transparent; top: 283px;"></div><div class="CodeMirror-gutters" style="display: none; height: 283px;"></div></div></div></pre><ul><li><span>AR1</span></li></ul><pre class="md-fences md-end-block ty-contain-cm modeLoaded" spellcheck="false" lang="apl" style="break-inside: unset;"><div class="CodeMirror cm-s-inner cm-s-null-scroll CodeMirror-wrap" lang="apl"><div style="overflow: hidden; position: relative; width: 3px; height: 0px; top: 8.10851px; left: 3.99304px;"><textarea autocorrect="off" autocapitalize="off" spellcheck="false" tabindex="0" style="position: absolute; bottom: -1em; padding: 0px; width: 1000px; height: 1em; outline: none;"></textarea></div><div class="CodeMirror-scrollbar-filler" cm-not-content="true"></div><div class="CodeMirror-gutter-filler" cm-not-content="true"></div><div class="CodeMirror-scroll" tabindex="-1"><div class="CodeMirror-sizer" style="margin-left: 0px; margin-bottom: 0px; border-right-width: 0px; padding-right: 0px; padding-bottom: 0px;"><div style="position: relative; top: 0px;"><div class="CodeMirror-lines" role="presentation"><div role="presentation" style="position: relative; outline: none;"><div class="CodeMirror-measure"><pre>x</pre></div><div class="CodeMirror-measure"></div><div style="position: relative; z-index: 1;"></div><div class="CodeMirror-code" role="presentation" style=""><div class="CodeMirror-activeline" style="position: relative;"><div class="CodeMirror-activeline-background CodeMirror-linebackground"></div><div class="CodeMirror-gutter-background CodeMirror-activeline-gutter" style="left: 0px; width: 0px;"></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-keyword">sys</span> </span></pre></div><div class="" style="position: relative;"><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-keyword">int</span> <span class="cm-keyword">g0</span><span class="cm-operator cm-apl-reduce">/</span><span class="cm-number">0</span><span class="cm-operator cm-apl-reduce">/</span><span class="cm-number">0</span> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span class="cm-comment"># 配置GE g0/0/0 端口</span></span></pre></div><div class="" style="position: relative;"><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-keyword">ip</span> <span class="cm-keyword">address</span> <span class="cm-number">192.168.1.195</span> <span class="cm-number">24</span> &nbsp; <span class="cm-comment"># 24代表子网掩码位数，即24位网络地址，8位主机地址</span></span></pre></div><div class="" style="position: relative;"><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-keyword">dhcp</span> <span class="cm-keyword">enable</span> <span class="cm-comment"># 开启dhcp服务</span></span></pre></div><div class="" style="position: relative;"><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-keyword">ip</span> <span class="cm-keyword">pool</span> <span class="cm-keyword">DHCPForPC</span> <span class="cm-comment"># 创建了一个名为DHCPForPC的IP地址池，用于DHCP服务器分配给主机的ip地址</span></span></pre></div><div class="" style="position: relative;"><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-keyword">network</span> <span class="cm-number">192.168.1.0</span> <span class="cm-keyword">mask</span> <span class="cm-number">24</span> <span class="cm-comment"># 指定ip地址池的网络地址和子网掩码</span></span></pre></div><div class="" style="position: relative;"><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-keyword">gateway-list</span> <span class="cm-number">192.168.1.195</span> <span class="cm-comment"># 指定DHCP服务提供的默认网关地址，与之前配置的接口IP地址相同</span></span></pre></div><div class="" style="position: relative;"><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-keyword">int</span> <span class="cm-keyword">g0</span><span class="cm-operator cm-apl-reduce">/</span><span class="cm-number">0</span><span class="cm-operator cm-apl-reduce">/</span><span class="cm-number">0</span> </span></pre></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-keyword">dhcp</span> <span class="cm-keyword">select</span> <span class="cm-keyword">global</span> &nbsp;<span class="cm-comment"># 指定该接口使用全局 DHCP 配置</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-keyword">int</span> <span class="cm-keyword">g0</span><span class="cm-operator cm-apl-reduce">/</span><span class="cm-number">0</span><span class="cm-operator cm-apl-reduce">/</span><span class="cm-number">1</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-keyword">ip</span> <span class="cm-keyword">address</span> <span class="cm-number">192.168.5.2</span> <span class="cm-number">24</span> </span></pre><div class="" style="position: relative;"><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-keyword">quit</span></span></pre></div><div class="" style="position: relative;"><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-keyword">ip</span> <span class="cm-keyword">route-static</span> <span class="cm-number">192.168.5.0</span> <span class="cm-number">24</span> <span class="cm-number">192.168.5.195</span></span></pre></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-keyword">ip</span> <span class="cm-keyword">route-static</span> <span class="cm-number">192.168.3.0</span> <span class="cm-number">24</span> <span class="cm-number">192.168.5.195</span></span></pre></div></div></div></div></div><div style="position: absolute; height: 0px; width: 1px; border-bottom: 0px solid transparent; top: 283px;"></div><div class="CodeMirror-gutters" style="display: none; height: 283px;"></div></div></div></pre><ul><li><span>LSW2</span></li></ul><pre class="md-fences md-end-block ty-contain-cm modeLoaded" spellcheck="false" lang="apl" style="break-inside: unset;"><div class="CodeMirror cm-s-inner cm-s-null-scroll CodeMirror-wrap" lang="apl"><div style="overflow: hidden; position: relative; width: 3px; height: 0px; top: 8.05426px; left: 3.99304px;"><textarea autocorrect="off" autocapitalize="off" spellcheck="false" tabindex="0" style="position: absolute; bottom: -1em; padding: 0px; width: 1000px; height: 1em; outline: none;"></textarea></div><div class="CodeMirror-scrollbar-filler" cm-not-content="true"></div><div class="CodeMirror-gutter-filler" cm-not-content="true"></div><div class="CodeMirror-scroll" tabindex="-1"><div class="CodeMirror-sizer" style="margin-left: 0px; margin-bottom: 0px; border-right-width: 0px; padding-right: 0px; padding-bottom: 0px;"><div style="position: relative; top: 0px;"><div class="CodeMirror-lines" role="presentation"><div role="presentation" style="position: relative; outline: none;"><div class="CodeMirror-measure"><pre><span>xxxxxxxxxx</span></pre></div><div class="CodeMirror-measure"></div><div style="position: relative; z-index: 1;"></div><div class="CodeMirror-code" role="presentation" style=""><div class="CodeMirror-activeline" style="position: relative;"><div class="CodeMirror-activeline-background CodeMirror-linebackground"></div><div class="CodeMirror-gutter-background CodeMirror-activeline-gutter" style="left: 0px; width: 0px;"></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-comment"># 作为三层交换机使用，有路由转发功能，所以这里也需要配置路由表，对于左右两个网段来说这是一个ip地址唯一的路由器接口</span></span></pre></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-keyword">sys</span></span></pre><div class="" style="position: relative;"><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-keyword">vlan</span> <span class="cm-number">1</span></span></pre></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-keyword">int</span> <span class="cm-keyword">vlanif</span> <span class="cm-number">1</span></span></pre><div class="" style="position: relative;"><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-keyword">ip</span> <span class="cm-keyword">address</span> <span class="cm-number">192.168.5.195</span> <span class="cm-number">24</span> <span class="cm-comment"># 与vlan 1关联的虚拟接口ip地址，实现与该VLAN相关的路由和转发功能</span></span></pre></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-keyword">int</span> <span class="cm-keyword">g0</span><span class="cm-operator cm-apl-reduce">/</span><span class="cm-number">0</span><span class="cm-operator cm-apl-reduce">/</span><span class="cm-number">1</span> </span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-keyword">port</span> <span class="cm-keyword">link-type</span> <span class="cm-keyword">access</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-keyword">port</span> <span class="cm-keyword">default</span> <span class="cm-keyword">vlan</span> <span class="cm-number">1</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-keyword">int</span> <span class="cm-keyword">g0</span><span class="cm-operator cm-apl-reduce">/</span><span class="cm-number">0</span><span class="cm-operator cm-apl-reduce">/</span><span class="cm-number">2</span> </span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-keyword">port</span> <span class="cm-keyword">link-type</span> <span class="cm-keyword">access</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-keyword">port</span> <span class="cm-keyword">default</span> <span class="cm-keyword">vlan</span> <span class="cm-number">1</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-keyword">int</span> <span class="cm-keyword">g0</span><span class="cm-operator cm-apl-reduce">/</span><span class="cm-number">0</span><span class="cm-operator cm-apl-reduce">/</span><span class="cm-number">3</span> </span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-keyword">port</span> <span class="cm-keyword">link-type</span> <span class="cm-keyword">access</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-keyword">port</span> <span class="cm-keyword">default</span> <span class="cm-keyword">vlan</span> <span class="cm-number">1</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-keyword">quit</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-keyword">ip</span> <span class="cm-keyword">route-static</span> <span class="cm-number">192.168.1.0</span> <span class="cm-number">24</span> <span class="cm-number">192.168.5.2</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-keyword">ip</span> <span class="cm-keyword">route-static</span> <span class="cm-number">192.168.3.0</span> <span class="cm-number">24</span> <span class="cm-number">192.168.5.3</span> </span></pre></div></div></div></div></div><div style="position: absolute; height: 0px; width: 1px; border-bottom: 0px solid transparent; top: 364px;"></div><div class="CodeMirror-gutters" style="display: none; height: 364px;"></div></div></div></pre><ul><li><span>AR2</span></li></ul><pre class="md-fences md-end-block ty-contain-cm modeLoaded" spellcheck="false" lang="apl"><div class="CodeMirror cm-s-inner cm-s-null-scroll CodeMirror-wrap" lang="apl"><div style="overflow: hidden; position: relative; width: 3px; height: 0px; top: 8.10851px; left: 3.99304px;"><textarea autocorrect="off" autocapitalize="off" spellcheck="false" tabindex="0" style="position: absolute; bottom: -1em; padding: 0px; width: 1000px; height: 1em; outline: none;"></textarea></div><div class="CodeMirror-scrollbar-filler" cm-not-content="true"></div><div class="CodeMirror-gutter-filler" cm-not-content="true"></div><div class="CodeMirror-scroll" tabindex="-1"><div class="CodeMirror-sizer" style="margin-left: 0px; margin-bottom: 0px; border-right-width: 0px; padding-right: 0px; padding-bottom: 0px;"><div style="position: relative; top: 0px;"><div class="CodeMirror-lines" role="presentation"><div role="presentation" style="position: relative; outline: none;"><div class="CodeMirror-measure"><pre><span>xxxxxxxxxx</span></pre></div><div class="CodeMirror-measure"></div><div style="position: relative; z-index: 1;"></div><div class="CodeMirror-code" role="presentation" style=""><div class="CodeMirror-activeline" style="position: relative;"><div class="CodeMirror-activeline-background CodeMirror-linebackground"></div><div class="CodeMirror-gutter-background CodeMirror-activeline-gutter" style="left: 0px; width: 0px;"></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-keyword">sys</span></span></pre></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span cm-text="" cm-zwsp="">
+</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-keyword">int</span> <span class="cm-keyword">g0</span><span class="cm-operator cm-apl-reduce">/</span><span class="cm-number">0</span><span class="cm-operator cm-apl-reduce">/</span><span class="cm-number">0</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-keyword">ip</span> <span class="cm-keyword">address</span> <span class="cm-number">192.168.5.3</span> <span class="cm-number">24</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-keyword">int</span> <span class="cm-keyword">g0</span><span class="cm-operator cm-apl-reduce">/</span><span class="cm-number">0</span><span class="cm-operator cm-apl-reduce">/</span><span class="cm-number">1</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-keyword">ip</span> <span class="cm-keyword">address</span> <span class="cm-number">192.168.3.195</span> <span class="cm-number">24</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-keyword">quit</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-keyword">ip</span> <span class="cm-keyword">route-static</span> <span class="cm-number">192.168.1.0</span> <span class="cm-number">24</span> <span class="cm-number">192.168.5.195</span></span></pre><div class="" style="position: relative;"><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-keyword">ip</span> <span class="cm-keyword">route-static</span> <span class="cm-number">192.168.5.0</span> <span class="cm-number">24</span> <span class="cm-number">192.168.5.195</span></span></pre></div></div></div></div></div></div><div style="position: absolute; height: 0px; width: 1px; border-bottom: 0px solid transparent; top: 182px;"></div><div class="CodeMirror-gutters" style="display: none; height: 182px;"></div></div></div></pre><ul><li><span>LSW3</span></li></ul><pre class="md-fences md-end-block ty-contain-cm modeLoaded" spellcheck="false" lang="apl"><div class="CodeMirror cm-s-inner cm-s-null-scroll CodeMirror-wrap" lang="apl"><div style="overflow: hidden; position: relative; width: 3px; height: 0px; top: 8.10851px; left: 3.99304px;"><textarea autocorrect="off" autocapitalize="off" spellcheck="false" tabindex="0" style="position: absolute; bottom: -1em; padding: 0px; width: 1000px; height: 1em; outline: none;"></textarea></div><div class="CodeMirror-scrollbar-filler" cm-not-content="true"></div><div class="CodeMirror-gutter-filler" cm-not-content="true"></div><div class="CodeMirror-scroll" tabindex="-1"><div class="CodeMirror-sizer" style="margin-left: 0px; margin-bottom: 0px; border-right-width: 0px; padding-right: 0px; padding-bottom: 0px;"><div style="position: relative; top: 0px;"><div class="CodeMirror-lines" role="presentation"><div role="presentation" style="position: relative; outline: none;"><div class="CodeMirror-measure"><pre><span>xxxxxxxxxx</span></pre></div><div class="CodeMirror-measure"></div><div style="position: relative; z-index: 1;"></div><div class="CodeMirror-code" role="presentation" style=""><div class="CodeMirror-activeline" style="position: relative;"><div class="CodeMirror-activeline-background CodeMirror-linebackground"></div><div class="CodeMirror-gutter-background CodeMirror-activeline-gutter" style="left: 0px; width: 0px;"></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-keyword">sys</span></span></pre></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-keyword">vlan</span> <span class="cm-number">3</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-keyword">int</span> <span class="cm-keyword">g0</span><span class="cm-operator cm-apl-reduce">/</span><span class="cm-number">0</span><span class="cm-operator cm-apl-reduce">/</span><span class="cm-number">1</span> </span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-keyword">port</span> <span class="cm-keyword">link-type</span> <span class="cm-keyword">access</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-keyword">port</span> <span class="cm-keyword">default</span> <span class="cm-keyword">vlan</span> <span class="cm-number">3</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-keyword">int</span> <span class="cm-keyword">g0</span><span class="cm-operator cm-apl-reduce">/</span><span class="cm-number">0</span><span class="cm-operator cm-apl-reduce">/</span><span class="cm-number">2</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-keyword">port</span> <span class="cm-keyword">link-type</span> <span class="cm-keyword">access</span></span></pre><div class="" style="position: relative;"><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-keyword">port</span> <span class="cm-keyword">default</span> <span class="cm-keyword">vlan</span> <span class="cm-number">3</span></span></pre></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-keyword">quit</span></span></pre></div></div></div></div></div><div style="position: absolute; height: 0px; width: 1px; border-bottom: 0px solid transparent; top: 182px;"></div><div class="CodeMirror-gutters" style="display: none; height: 182px;"></div></div></div></pre><p>&nbsp;</p><p>&nbsp;</p><p>&nbsp;</p><p>&nbsp;</p><p>&nbsp;</p><p>&nbsp;</p><p>&nbsp;</p><p>&nbsp;</p><p>&nbsp;</p><p>&nbsp;</p><p>&nbsp;</p><p>&nbsp;</p><p>&nbsp;</p></div></div>
+</body>
+</html>
